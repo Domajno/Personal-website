@@ -13,7 +13,7 @@
 			"vis": "Visualization",
 			"python": "Python"
         },
-        "img_dir": "/content/img/"
+        "img_dir": "content/img/"
     },
     "entries": [
 		{
