@@ -1,0 +1,287 @@
+body, html {
+	margin: 0px;
+	padding: 0px;
+	background: #d5b996;
+}
+
+.warning {
+	background: red;
+	color: yellow;
+	text-align: center;
+	font-weight: bold;
+	padding: 0.2em;
+}
+
+#header {
+	background: #882008;
+	color: #e8b818;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0.4em;
+	height: 100px;
+}
+
+.helper {
+	background: #882008;
+	color: #e8b818;
+	font-size: 28pt;
+	font-weight: bold;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+.helper img {
+	vertical-align: middle;
+}
+
+.logo_cell {
+	width: 10%;
+}
+
+#header p {
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+
+#footer {
+	background: #882008;
+	color: #e8b818;
+	text-align: center;
+	padding: 0.4em;
+	font-size: x-small;
+	font-family: Tahoma, Verdana, Arial, serif;
+}
+
+#footer img {
+	border: 0;
+}
+
+#container {
+	margin: 10px;	
+	min-height: 100%;
+}
+
+.columns {
+	width: 100%;
+	display: table;
+	padding: 0em;
+	margin: 0em;
+	border: 0em;
+}
+
+.wrapper {
+	display: table-row;
+}
+
+.wrapper div {
+	display: table-cell;
+}
+
+.menu {
+	background: #807058;
+	color: black;
+	width: 20%;
+	height: 425px;
+	margin: 0;
+	padding-top: 0.5em;
+}
+
+.menu h1 {
+	font-size: small;
+	font-weight: bold;
+	margin: 0;
+	padding: 2px 10px 2px 10px;
+	border-bottom: 1px solid #000;
+}
+
+.menu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.menu li {
+	border: 1px solid #786850;
+	border-top: 0px;
+	display: block;
+}
+
+.menu a {
+	background: #907850;
+	color: #000;
+	border-left: 10px solid #580000;
+	padding-left: 5px;
+	display: block;
+	text-decoration: none;
+}
+
+.menu a:hover {
+	background: #b09068;
+	color: #a00;
+	border-left: 10px solid #a00000;
+	text-decoration: none;
+}
+
+#support {
+/*	background: #b08d64;*/
+	background: #a98252;
+	color: black;
+	float: right;
+	width: 200px;
+	padding: 0.5em;
+	margin-left: 0.5em;
+	border-left: 0.5em;
+	font-size: small;
+}
+
+#support ul {
+	margin: 0;
+	padding: 0;
+	padding-left: 1.5em;
+}
+
+#support .first {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+/* Style definitions for the main document body */
+#main {
+	background: #b59976;
+	color: black;
+	padding: 0.5em;
+	height: 100%;
+	margin: 0em;
+	border: 0em;
+	vertical-align: top;
+}
+
+#main a, #main a:visited {
+	color: #984800;
+}
+
+#main a:hover {
+	color: #c86800;
+}
+
+#support a, #support a:visited, #footer a, #footer a:visited {
+	color: #f8d880;
+}
+
+#support a:hover, #footer a:hover {
+	color: #fff8b8;
+}
+
+#main > p {
+	text-align: justify;
+}
+
+#main h1 {
+	background: #a98252;
+/*	background: #b08d64;*/
+	margin-top: 0;
+	border-bottom: 1px solid #000;
+}
+
+#main h2 {
+	margin: 0;
+	padding-top: 0.2em;
+}
+
+#main .name {
+	font-weight: bold;
+}
+
+#main .addr {
+	font-style: italic;
+	padding: 1em;
+	display: block;
+}
+
+#main .date {
+	color: #800;
+}
+
+#main .emph {
+	color: #800;
+	font-style: italic;
+}
+
+#main .tbl-docs {
+	width: 50%;
+}
+
+#main .tbl-docs th {
+	background: #a88460;
+}
+
+#main .tbl-docs td {
+	background: #b08d64;
+	text-align: center;
+}
+
+#main .entry-list {
+	text-align: center;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#main .entry-list th {
+	background: #a88460;
+	font-size: medium;	
+	font-weight: bold;
+	border: 1px solid #000;
+}
+
+#main .entry-list td {
+	background: #c5a986;
+	border: 1px solid #000;
+	font-size: small;
+}
+
+#main .entry-list tr.backup td {
+	border: 1px solid #000;
+	background: #908868;
+	font-size: small;
+}
+
+#main .backup {
+	background: #908868;
+}
+
+#main .results {
+	list-style-type: upper-roman;
+}
+
+#main .rules {
+	list-style-type: upper-roman;
+	font-size: large;
+	counter-reset: para;
+}
+
+#main .rules .subsection {
+	list-style-type: none;
+	font-size: medium;
+	margin: 0;
+	padding: 1em;
+}
+
+#main .rules .subsection li {
+	padding-bottom: 0.5em;
+}
+
+#main .rules .subsection > li {
+	counter-increment: para;
+}
+
+#main .rules .subsection > li:before {
+	font-weight: bold;
+	content: "§" counter(para) ". " ;
+}
+
+/* vim: set ts=4 encoding=utf-8 nowrap : */
+	
