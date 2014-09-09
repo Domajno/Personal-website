@@ -1,0 +1,60 @@
+{
+    "metadata": {
+        "intro": "Having educational background in Information Systems, Econometrics, Data Mining and Knowledge Management from three different universities in Europe I would describe myself as an aspiring data scientist. Though, there is still many things to learn before fully deserving that title I try to develop various skills through work and involvement in various projects from the domain of my interests - Data Mining with special emphasis on the Data Visualization and web technologies. This website is supposed to serve as my portfolio, online resume and a blog. I am always looking for new challenges and interesting projects. Should you be interested in the stuff I do please feel free to share or to drop me an email.",
+        "tags": {
+            "js": "Java Script",
+            "project": "Project",
+            "aboutme": "About me",
+            "cv": "Resume / CV",
+            "flash": "Flash",
+            "webdev": "Web Development",
+            "blog": "Blog",	
+			"d3": "D3.js",
+			"vis": "Visualization",
+			"python": "Python"
+        },
+        "img_dir": "/content/img/"
+    },
+    "entries": [
+		{
+			"timestamp": "February 02, 2014 00:00:00",
+            "title": "Fashion trends",
+            "tags": ["project", "js", "d3", "vis", "python"],
+            "description": "End to end development - starting from the idea through research, backend implementation and frontend visualization of the results is really a satisfying experience. This simple application is hosted in the <a href=\"https://www.pythonanywhere.com/\" target=\"_blank\">cloud</a> and exploits many different components to collect and analyze tweets about fashion. Therefore, it can be seen as a social media monitoring tool which attempts to find useful information such as patterns or anomalies in the mass of unstructured text which people publish online. Although the analysis performed is rather simple the results are interesting and many further improvements can be considered e.g. deeper linguistic or sentiment analysis of the tweets and more complex analysis of the collected data.",
+            "external_link": "/fashion/",
+            "img_small": "fashion.png"
+		},
+		{
+			"timestamp": "August 20, 2013 00:00:00",
+            "title": "Visual Resume",
+            "tags": ["project", "js", "d3", "vis"],
+            "description": "Working further on <i>Interactive CV</i> project I've realized that there are many standards to define resumes e.g. ontologies such as <a href=\"http://rdfs.org/resume-rdf/\"  target=\"_blank\">ResumeRDF Ontology</a> or <a href=\"http://www.w3.org/2001/sw/Europe/events/foaf-galway/papers/pp/extending_foaf_with_resume/\"  target=\"_blank\">FOAF resume extension</a>. These standards allow to annotate curriculum vitae with the semantic information to make it easily understandable by the machines. Why not visualize this data? Such <i>Visual Resume</i> could become an attractive way of presenting a CV online and encourage people to create and publish semantic content on the web. Moreover, as a tool used by HR it could allow for visual analysis and comparison between different candidates. This first simple prototype tries to implement the idea and display content of resumes annotated with <a href=\"http://microformats.org/wiki/hresume\"  target=\"_blank\">hResume microformat</a>.",
+            "external_link": "/visual_resume/",
+            "img_small": "visualcv_small.png"
+		},
+		{
+			"timestamp": "June 20, 2013 00:00:00",
+            "title": "Visualization for Open Xerox",
+            "tags": ["project", "js", "webdev", "d3", "vis"],
+            "description": "The advent of modern web browsers and open web standards helps to abandon proprietary plugins and allows to create fully interactive content in the browser using open source technologies and standards. That, in the times of information overload leads to the popularization of the visualization tools which give efficient and elegant way for presenting and understanding data. During the internship which was a part of my master programme I had a chance to work in Xerox Research Cetnre Europe in France and develop a visualization framework which operates on top of the Open Xerox web platform. The framework was constructed using Java Script and <a href=\"http://d3js.org/\" target=\"_blank\">D3.js</a> library and is publicly available on <a href=\"http://open.xerox.com/\"  target=\"_blank\">Open Xerox</a>.",
+            "external_link": "http://open.xerox.com/",
+            "img_small": "ox_small.png"
+		},
+		{
+			"timestamp": "April 09, 2013 00:00:00",
+            "title": "Visualizing Daily Deals",
+            "tags": ["project", "js", "d3", "vis"],
+            "description": "<a href=\"http://crowdanalytix.com/\" target=\"_blank\">Crowdanalytix</a> is a community of the data scientist which offers data-driven business challenges through ideation, predictive analytics and data mining competitions. The task of the first visualization competition was to gain insights into a daily deals industry (e.g. Groupon, LivingSocial) in a quick yet intuitive manner. Visualization techniques are often the very first step in the process of data analysis allowing to expose the structure of the dataset and form hypotheses which should be later veryfied using more sohisticated statistucal approaches. My interactive submission created using <a href=\"http://d3js.org/\" target=\"_blank\">D3.js</a> library and Java Script was placed amongst top 10 winning participants and also received a special price for the most creative submission.",
+            "external_link": "http://qroxx.com/visualization/",
+            "img_small": "dailydeals_small.png"
+		},
+		{
+            "timestamp": "April 02, 2009 00:00:00",
+            "title": "Interactive CV",
+            "tags": ["aboutme", "project", "cv", "flash", "vis"],
+            "description": "The idea originated while exploring different alternative ways of presenting a resume. Mind mapping techniques appeared particularly interesting however static images seemed to be boring and were not able to convey the dynamic multimedia content. Therefore, I have developed an interactive version of the Curriculum Vitae using Adobe Flash technology to display my resume in a form of a mind map. Mind maps are diagrams allowing to take notes and organize information in a nonlinear way and to outline it visually which is supposed to ease the process of memorization. This idea proved to be successful in attracting potential employers and winning a chance to get interviews as well as <a href=\"http://www.em-dmkm.eu/\" target=\"_blank\">Erasmus Mundus DMKM</a> master programme scholarship.",
+            "internal_link": "/cv/",
+            "img_small": "cv_min.png"
+        }
+    ]
+}
