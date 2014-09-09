@@ -21,7 +21,7 @@
             "title": "Fashion trends",
             "tags": ["project", "js", "d3", "vis", "python"],
             "description": "End to end development - starting from the idea through research, backend implementation and frontend visualization of the results is really a satisfying experience. This simple application is hosted in the <a href=\"https://www.pythonanywhere.com/\" target=\"_blank\">cloud</a> and exploits many different components to collect and analyze tweets about fashion. Therefore, it can be seen as a social media monitoring tool which attempts to find useful information such as patterns or anomalies in the mass of unstructured text which people publish online. Although the analysis performed is rather simple the results are interesting and many further improvements can be considered e.g. deeper linguistic or sentiment analysis of the tweets and more complex analysis of the collected data.",
-            "external_link": "/fashion/",
+            "external_link": "subwebsites/fashion/",
             "img_small": "fashion.png"
 		},
 		{
