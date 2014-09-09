@@ -1,0 +1,99 @@
+body {
+	margin: 0px;
+	font-family: "Roboto Condensed","Titillium Web",sans-serif;
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNiIgaGVpZ2h0PSI2Ij4KPHJlY3Qgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0iI2VlZWVlZSI+PC9yZWN0Pgo8ZyBpZD0iYyI+CjxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjMiIGZpbGw9IiNlNmU2ZTYiPjwvcmVjdD4KPHJlY3QgeT0iMSIgd2lkdGg9IjMiIGhlaWdodD0iMiIgZmlsbD0iI2Q4ZDhkOCI+PC9yZWN0Pgo8L2c+Cjx1c2UgeGxpbms6aHJlZj0iI2MiIHg9IjMiIHk9IjMiPjwvdXNlPgo8L3N2Zz4=);
+}
+
+#header {
+	background: #333;
+	color: #DDD;
+	padding: 15px;
+	height: 40px;
+	margin-top: 10px;
+}
+	
+#header-content {
+	margin: 0 auto;
+	width: 810px;
+}
+
+.narrow #header-content {
+	width: 400px;
+}
+
+#header-content>div {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.narrow #header-content>div {
+	display: block;
+}
+	
+#search-box {
+	position: relative;
+	width: 400px;
+}
+
+#search-form {
+	height: 40px;
+	border: 1px solid #2F82FF;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+#search-text {
+	font-size: 14px;
+	color: #ddd;
+	border-width: 0;
+	background: transparent;
+}
+
+#search-box input[type="text"] {
+	width: 90%;
+	padding: 11px 0 12px 1em;
+	color: #333;
+	outline: none;
+}
+
+#search-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 42px;
+	width: 80px;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	line-height: 42px;
+	border-width: 0;
+	background-color: #2F82FF;
+	-webkit-border-radius: 0px 5px 5px 0px;
+	-moz-border-radius: 0px 5px 5px 0px;
+	border-radius: 0px 5px 5px 0px;
+	cursor: pointer;
+}			
+
+#visualization {
+	margin: 15px;
+}
+
+
+svg .node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+svg .node {
+  font: 10px sans-serif;
+}
+
+svg .link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}

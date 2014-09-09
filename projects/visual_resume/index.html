@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Visual Resume</title>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-35256103-1']);
+	  _gaq.push(['_setDomainName', 'cygalski.pl']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	<link rel="stylesheet" type="text/css" href="content/theme.css">
+</head>
+	
+<body>
+		<div id="header">
+			<div id="header-content">
+			
+				<div id="logo">
+					<img src="logo.svg" alt="logo" height="40">
+				</div>
+			
+				<div id='search-box'>
+				  <div id='search-form'>
+					<input id='search-text' name='q' placeholder='URL to hResume document (e.g. LinkedIn)' type='text'/>
+					<button id='search-button' type='button'><span>Visualize</span></button>
+				  </div>
+				</div>
+				
+			</div>
+		</div>
+		<div id="visualization">
+		</div>
+		
+
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script src="js/main.js"></script>	
+		
+		
+	</body>
+</html>
