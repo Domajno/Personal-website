@@ -1,0 +1,21 @@
+﻿svg {
+ background: #19149C;
+}
+
+circle {
+  fill: rgba(55,55,220,0.25);
+  stroke: rgba(220,220,220,0.25);
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: rgba(0,255,0,0.04);  
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.axis {
+  stroke: rgba(0,255,0,0.54);  
+  fill: none;
+  stroke-width: 1.5px;
+}
