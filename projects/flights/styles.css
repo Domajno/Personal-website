@@ -3,9 +3,11 @@
 }
 
 #invert-btn {
-position: fixed;
+position: absolute;
+right: 0;
 padding: 1%;
 margin: 1em;
+margin-right: 2em;
 cursor: pointer;
 
 border: 1px solid #eee;
