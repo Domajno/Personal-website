@@ -14,6 +14,15 @@ border: 1px solid #eee;
 background-color: #B19AEE;
 }
 
+#title {
+  position: absolute;
+  margin-left: 1em;
+}
+
+h1 {
+color: #eee;  
+}
+
 body, svg {
  margin: 0;
  width: 100%;
@@ -46,6 +55,10 @@ circle {
 .inverted #invert-btn {
 border: 1px solid #000;
 background-color: #B19AEE;
+}
+
+.inverted h1 {
+  color: #222;
 }
  
 body.inverted,.inverted svg {
