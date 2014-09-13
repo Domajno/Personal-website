@@ -1,0 +1,6 @@
+﻿This graph visualizes the <a href="http://openflights.org/data.html">OpenFlights</a> data set which holds the information about world airports and the flight connection betwee them. In addition, the <a href="http://www.geonames.org/">GeoNames</a> data set was used to obtain population of the cities.
+
+
+Cities are represented by the circle which are organized into three main axes: Asian, European and North American. The closer the city is the the center of the graph the smaller the city. Size of circle represents the number of the airports that serve that particular city i.e. cities with big circles have many aiports. Linkes represent the flight connections between the city. For the visual pourposes only intercontinental connections are shown.
+
+Visualization was created using D3.js and the code is open and available on GitHub.

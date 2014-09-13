@@ -1,5 +1,15 @@
 ﻿#graph {
- 
+ margin-top: 1em;
+}
+
+#invert-btn {
+position: fixed;
+padding: 1%;
+margin: 1em;
+cursor: pointer;
+
+border: 1px solid #eee;
+background-color: #B19AEE;
 }
 
 body, svg {
@@ -23,6 +33,37 @@ circle {
 
 .axis {
   stroke: rgba(0,255,0,0.54);  
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+/*
+ * Inverted styles
+ */
+
+.inverted #invert-btn {
+border: 1px solid #000;
+background-color: #B19AEE;
+}
+ 
+body.inverted,.inverted svg {
+ background: #ddd;
+}
+
+.inverted circle {
+  fill: rgba(5,5,5,0.25);
+  stroke: rgba(200,200,200,0.25);
+  stroke-width: 1.5px;
+}
+
+.inverted .link {
+  stroke: rgba(0,55,0,0.04);  
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.inverted .axis {
+  stroke: rgba(0,55,0,0.54);  
   fill: none;
   stroke-width: 1.5px;
 }

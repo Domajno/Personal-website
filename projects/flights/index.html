@@ -10,6 +10,7 @@
 <body>
 	
 	<div id="title"></div>
+	<div id="invert-btn"></div>
 	<div id="graph"></div>
 	<div id="description"></div>
 
@@ -18,6 +19,12 @@
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://d3js.org/d3.hive.v0.min.js"></script>
 <script>
+
+d3.select("#invert-btn").on('click', function () {
+	var body = d3.select("body");
+	var clas = "inverted";
+	body.classed(clas, !body.classed(clas));
+});
 
 var width = 1280,
     height = 720,
