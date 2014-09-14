@@ -101,7 +101,8 @@ fill: rgba(170,170,170,0.44);
  @media only screen and (max-width: 1024px) {
 
    h1 { font-size: 1em; }
-   #menu { height: 1.5em; }
+   li { font-size: 0.5em; }
+   ul { margin: 0;}
 
 }
 

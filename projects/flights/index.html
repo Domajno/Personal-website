@@ -23,14 +23,14 @@
 	<div id="graph"></div>
 	<div id="info">
 		<div>
-		<h3>What?</h3>This graph visualizes the <a href="http://openflights.org/data.html">OpenFlights</a> data set which holds the information about airports and the flights. In addition, the <a href="http://www.geonames.org/">GeoNames</a> data set was used to obtain population of the cities. Cities are represented by the circles which are organized into three main axes: Asian, European and North American. The closer the city is the the center of the graph the smaller it is. Size of circle represents the number of the airports that serve that particular city i.e. cities with big circles have many airports. Links represent the flight connections between the cities. For the visual purposes only intercontinental connections are shown.
+		<h3>What?</h3>This graph visualizes the <a href="http://openflights.org/data.html" target="_blank">OpenFlights</a> data set which holds the information about airports and the flights. In addition, the <a href="http://www.geonames.org/" target="_blank">GeoNames</a> data set was used to obtain population of the cities. Cities are represented by the circles which are organized into three main axes: Asian, European and North American. The closer the city is the the center of the graph the smaller it is. Size of circle represents the number of the airports that serve that particular city i.e. cities with big circles have many airports. Links represent the flight connections between the cities. For the visual purposes only intercontinental connections are shown.
 	   
-	    <h3>Why?</h3>Motivated by the <a href="http://neo4j.com/showmeyourgraph-rules/">Neo4j #ShowMeYourGraph Twitter Contest</a> for a graph visualization I finally girded up my lions to try working with the hive plot. <a href="http://www.hiveplot.net/">Hive plot</a> is a special graph layout by <a href="http://mkweb.bcgsc.ca/">Martin Krzywinski</a> which attempts to position the nodes in a meaningful way. I really like the idea as I agree that for networks with many nodes and connections it can give much more insights into the data set compared to other 'hair ball' styled layouts e.g. force directed.
+	    <h3>Why?</h3>Motivated by the <a href="http://neo4j.com/showmeyourgraph-rules/" target="_blank">Neo4j #ShowMeYourGraph Twitter Contest</a> for a graph visualization I finally girded up my lions to try working with the hive plot. <a href="http://www.hiveplot.net/" target="_blank">Hive plot</a> is a special graph layout by <a href="http://mkweb.bcgsc.ca/" target="_blank">Martin Krzywinski</a> which attempts to position the nodes in a meaningful way. I really like the idea as I agree that for networks with many nodes and connections it can give much more insights into the data set compared to other 'hair ball' styled layouts e.g. force directed.
 	   
-		<h3>How?</h3>Visualization was created using D3.js (starting from this <a href="http://bl.ocks.org/mbostock/2066415">template</a>) and the code is open and available on <a href="https://github.com/Domajno/Air-traffic-visualization.git">GitHub</a>.<br/>
+		<h3>How?</h3>Visualization was created using D3.js (starting from this <a href="http://bl.ocks.org/mbostock/2066415" target="_blank">template</a>) and the code is open and available on <a href="https://github.com/Domajno/Air-traffic-visualization.git" target="_blank">GitHub</a>.<br/>
 		Moreover, I decided to talk a very good friend of mine who is a professional photographer and a graphic designer into participating together. I took charge of the tedious work of data cleaning and preparation while he made sure that the final result is really pleasant to look at. At the end some scripting was added to make the experience interactive et voila. 
 		
-		<p>Made with <3 by <a href="http://cygalski.pl/">Dominik Cygalski</a> and <a href="http://www.luke-photography.com/">Lukasz Gajdek.</a></p>
+		<p>Made with <3 by <a href="http://cygalski.pl/" target="_blank">Dominik Cygalski</a> and <a href="http://www.luke-photography.com/" target="_blank">Lukasz Gajdek.</a></p>
 		</div>
 	</div>
 
@@ -87,8 +87,9 @@ svg.selectAll(".link")
     .attr("class", "link")
     .attr("d", d3.hive.link()
     .angle(function(d) { return d?angle(d.x):0; })
-    .radius(function(d) { return d?radius(d.y):0; }));
-    //.style("stroke", function(d) { return "rgba(0,255,0,0.05)"; }); //color(d.source?d.source.x:0)
+    .radius(function(d) { return d?radius(d.y):0; }))
+	.attr("data-s", function(d) {return d.source.id;})
+	.attr("data-t", function(d) {return d.target.id;});
 
 svg.selectAll(".node")
     .data(nodes)
@@ -98,7 +99,18 @@ svg.selectAll(".node")
     .attr("transform", function(d) { return "rotate(" + degrees(angle(d.x)) + ")"; })
     .attr("cx", function(d) { return radius(d.y); })
     .attr("r", function(d) { return Math.sqrt(d.count * 4); })
-	.on("click", function(d, i) {console.log(i);})
+	.attr("data-id", function(d, i) { return i; })
+	.on("mousedown", function(d, i) {
+		d3.selectAll("path").style('opacity', 0);
+		d3.selectAll("path[data-s='" + i + "']").style('opacity', 1);
+		d3.selectAll("path[data-t='" + i + "']").style('opacity', 1);
+	})
+	.on("mouseup", function(d, i) {
+		d3.selectAll("path").style('opacity', 1);
+	})
+	.on("mouseout", function(d, i) {
+		d3.selectAll("path").style('opacity', 1);
+	})
 	.append("svg:title")
           .text(function(d) { return d.name; });
 
