@@ -9,16 +9,47 @@
 
 <body>
 	
-	<div id="title"><h1>Flights visualization. Hive plot.</h1></div>
-	<div id="invert-btn"></div>
+	<div id="menu">
+		<h1>Flights visualization</h1>
+		<div id="links">
+			<ul>
+				<li id="about">About</li>
+			</ul>
+		</div>
+		<div id="invert-btn"></div>
+	</div>
+	
 	<div id="graph"></div>
-	<div id="description"></div>
+	<div id="info">
+		<div>
+		<h2>What?</h2>This graph visualizes the <a href="http://openflights.org/data.html">OpenFlights</a> data set which holds the information about world airports and the flight connections between them. In addition, the <a href="http://www.geonames.org/">GeoNames</a> data set was used to obtain population of the cities.Cities are represented by the circle which are organized into three main axes: Asian, European and North American. The closer the city is the the center of the graph the smaller the city. Size of circle represents the number of the airports that serve that particular city i.e. cities with big circles have many aiports. Linkes represent the flight connections between the city. For the visual pourposes only intercontinental connections are shown.
+	   
+	    <h2>Why?</h2>Motivated by the <a href="http://neo4j.com/showmeyourgraph-rules/">Neo4j #ShowMeYourGraph Twitter Contest</a> for a graph visualization I finally girded up my lions to try working with the hive plot. <a href="http://www.hiveplot.net/">Hive plot</a> is a special graph layout by <a href="http://mkweb.bcgsc.ca/">Martin Krzywinski</a> which attempts to position the nodes in a meaningful way which can be interpreted. I really like the idea as I agree that for networks with many nodes and connections it can give much more insights into the data set compared to other 'hair ball' styled layouts e.g. force directed. 
+		<br/>Moreover, I decided to talk a very good friend of mine who is a professional photographer and a graphic designer into participating together. I took charge of the teadius work of data cleaning and preparation while he made sure that the final result is really pleasant to look at. At the end some scripting was added to make the experience interactive et voila. 
+	   
+		<h2>How?</h2>Visualization was created using D3.js (starting from http://bl.ocks.org/mbostock/2066415) and the code is open and available on GitHub.
+		
+		<p>Made with <3 by <a href="http://cygalski.pl/">Dominik Cygalski</a> and <a href="http://www.luke-photography.com/">Lukasz Gajdek.</a></p>
+		</div>
+	</div>
 
 	<script src="airports.js"></script>
 	<script src="connections.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://d3js.org/d3.hive.v0.min.js"></script>
 <script>
+
+window.onload = function() {
+
+d3.select('#about').on('click', function () {
+	d3.select('#info').style('display','block');
+});
+d3.select('#info').on('click', function () {
+	if (d3.event && d3.event.srcElement == document.getElementById('info'))
+		d3.select('#info').style('display',null);
+});
+
+}
 
 d3.select("#invert-btn").on('click', function () {
 	var body = d3.select("body");
@@ -65,11 +96,13 @@ svg.selectAll(".node")
 	.attr("data-name", function(d) { return d.name; })
     .attr("transform", function(d) { return "rotate(" + degrees(angle(d.x)) + ")"; })
     .attr("cx", function(d) { return radius(d.y); })
-    .attr("r", function(d) { return Math.sqrt(d.count * 8); })
+    .attr("r", function(d) { return Math.sqrt(d.count * 4); })
+	.on("click", function(d, i) {console.log(i);})
 	.append("svg:title")
           .text(function(d) { return d.name; });
-    //.style("fill", function(d) { return color(d.x); });
 
+svg.append('g').attr('transform', 'scale(0.25)rotate(-70)translate(680,400)')
+	.append('path').attr('id', 'aircraft').attr('d', 'm54.82,16.917c0.023,-7.053 10.66,-7.053 10.66,0.202l0,29.621l41.453,24.925l0,10.947l-41.264,-13.58l0,22.12901l9.547,7.479l0,8.64101l-14.723,-4.57l-14.719,4.57l0,-8.64101l9.45,-7.479l0,-22.12901l-41.289,13.58l0,-10.947l40.885,-24.925l0,-29.823z');
 	
 function degrees(radians) {
   return radians / Math.PI * 180 - 90;
