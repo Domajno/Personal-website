@@ -81,29 +81,32 @@ background-color: #B19AEE;
 }
 
 body.inverted,.inverted svg {
- background: #ddd;
+ background: #fff;
 }
 
 .inverted circle {
-  fill: rgba(5,5,5,0.25);
-  stroke: rgba(200,200,200,0.25);
-  stroke-width: 1.5px;
+ fill: rgba(232,232,240,0.25);
+ stroke: rgba(80,80,80,0.25);
+ stroke-width: 0.5px;
+}
+.inverted circle:hover {
+stroke: rgba(00,00,00,1);
 }
 
 .inverted .link {
-  stroke: rgba(0,55,0,0.04);  
-  fill: none;
-  stroke-width: 1.5px;
+ stroke: rgba(120,155,250,0.03);  
+ fill: none;
+ stroke-width: 1.5px;
 }
 
 .inverted .axis {
-  stroke: rgba(0,55,0,0.54);  
-  fill: none;
-  stroke-width: 1.5px;
+ stroke: rgba(200,200,200,0.54);  
+ fill: none;
+ stroke-width: 1.5px;
 }
 
 .inverted  #aircraft {
-fill: rgba(0,55,0,0.44);  
+fill: rgba(200,200,200,0.44);
 }
 
 /*
