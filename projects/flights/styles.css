@@ -35,6 +35,10 @@ body, svg {
  color: rgba(200,200,220,0.84); 
 }
 
+text {
+fill:rgba(200,200,220,0.54);
+}
+
 circle {
   fill: rgba(10,10,10,0.5);
   stroke: rgba(200,200,200,0.25);
