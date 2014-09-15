@@ -61,7 +61,7 @@ d3.select("#invert-btn").on('click', function () {
 var width = 1280,
     height = 680,
     innerRadius = 10,
-    outerRadius = 450;
+    outerRadius = 430;
 	
 var angle = d3.scale.ordinal().domain(d3.range(4)).rangePoints([0, 2 * Math.PI]),
     radius = d3.scale.linear().range([innerRadius, outerRadius]).nice(),
@@ -122,8 +122,8 @@ svg.append('g').attr('transform', function(d) {return 'rotate(' + (degrees(angle
 	.append('text').text("Europe");
 svg.append('g').attr('transform', function(d) {return 'rotate(' + (degrees(angle(1))) + ')translate(330,-2)';})
 	.append('text').text("Asia");
-svg.append('g').attr('transform', function(d) {return 'rotate(' + (-degrees(angle(0))) + ')translate(-330,-2)';})
-	.append('text').text("North America");
+svg.append('g').attr('transform', function(d) {return 'rotate(' + (-degrees(angle(0))) + ')translate(-330,-3)';})
+	.append('text').text("N. America");
 	
 function degrees(radians) {
   return radians / Math.PI * 180 - 90;

@@ -94,6 +94,10 @@ body.inverted,.inverted svg {
   stroke-width: 1.5px;
 }
 
+text {
+fill:rgba(151, 151, 187, 1);
+}
+
 .inverted  #aircraft {
 fill: rgba(170,170,170,0.44);
 }
