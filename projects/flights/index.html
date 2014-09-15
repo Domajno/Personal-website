@@ -118,9 +118,9 @@ svg.append('g').attr('transform', 'scale(0.25)rotate(-70)translate(680,400)')
 	.append('path').attr('id', 'aircraft').attr('d', 'm54.82,16.917c0.023,-7.053 10.66,-7.053 10.66,0.202l0,29.621l41.453,24.925l0,10.947l-41.264,-13.58l0,22.12901l9.547,7.479l0,8.64101l-14.723,-4.57l-14.719,4.57l0,-8.64101l9.45,-7.479l0,-22.12901l-41.289,13.58l0,-10.947l40.885,-24.925l0,-29.823z');
 	
 	
-svg.append('g').attr('transform', function(d) {return 'rotate(' + (degrees(angle(2)) - 180) + ')translate(-330,-2)';})
+svg.append('g').attr('transform', function(d) {return 'rotate(' + (degrees(angle(2)) - 180) + ')translate(-330,-3)';})
 	.append('text').text("Europe");
-svg.append('g').attr('transform', function(d) {return 'rotate(' + (degrees(angle(1))) + ')translate(330,-2)';})
+svg.append('g').attr('transform', function(d) {return 'rotate(' + (degrees(angle(1))) + ')translate(330,-3)';})
 	.append('text').text("Asia");
 svg.append('g').attr('transform', function(d) {return 'rotate(' + (-degrees(angle(0))) + ')translate(-330,-3)';})
 	.append('text').text("N. America");
