@@ -1,78 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+	<meta charset="utf-8">
 
-<link href="./nv.d3.min.css" rel="stylesheet" type="text/css">
-<title>Fashion trends</title>
-<style>
+	<link href="./nv.d3.min.css" rel="stylesheet" type="text/css">
+	<title>Fashion trends</title>
+	<style>
 
-body {
-  overflow-y:scroll;
-  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-  font-size: 11px;
-  letter-spacing: 1px;
-  margin: 4em;
-}
+	body {
+	  overflow-y:scroll;
+	  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+	  font-size: 11px;
+	  letter-spacing: 1px;
+	  margin: 4em;
+	}
 
-text {
-  font: 12px sans-serif;
-}
+	text {
+	  font: 12px sans-serif;
+	}
 
-#chart1, #chart2 {
-  height: 500px;
-}
+	#chart1, #chart2 {
+	  height: 500px;
+	}
 
-h1 {
-  font-family: times, Times New Roman, times-roman, georgia, serif;
-  color: #444;
-  margin: 0;
-  padding: 0px 0px 6px 0px;
-  font-size: 51px;
-  line-height: 44px;
-  letter-spacing: -2px;
-  font-weight: bold;
-}
-h2 {
-   font-family: Gill Sans, Verdana;
-   font-size: 11px;
-   line-height: 14px;
-   text-transform: uppercase;
-   letter-spacing: 2px;
-   font-weight: bold;
-}
-#description{
-   -moz-column-count: 2;
-   -webkit-column-count: 2;
-   column-count: 2;
-   text-align: justify;	
-   -moz-column-gap:20px; /* Firefox */
-   -webkit-column-gap:20px; /* Safari and Chrome */
-   column-gap:20px;
-   -moz-column-rule:1px outset #bbb; /* Firefox */
-   -webkit-column-rule:1px outset #bbb; /* Safari and Chrome */
-   column-rule:1px outset #bbb;
-   max-width: 800px;
-}
-#info {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1 !important;
-  background-color: rgba(153, 153, 153, 0.62);	
-  display:none;
-}
-#info div{
-  padding:2em;
-  background-color:#fff;
-  margin: 0 auto;
-  max-width: 600px;
-  text-align: justify;
-  margin-top:2em;
-}
-</style>
+	h1 {
+	  font-family: times, Times New Roman, times-roman, georgia, serif;
+	  color: #444;
+	  margin: 0;
+	  padding: 0px 0px 6px 0px;
+	  font-size: 51px;
+	  line-height: 44px;
+	  letter-spacing: -2px;
+	  font-weight: bold;
+	}
+	h2 {
+	   font-family: Gill Sans, Verdana;
+	   font-size: 11px;
+	   line-height: 14px;
+	   text-transform: uppercase;
+	   letter-spacing: 2px;
+	   font-weight: bold;
+	}
+	#description{
+	   -moz-column-count: 2;
+	   -webkit-column-count: 2;
+	   column-count: 2;
+	   text-align: justify;	
+	   -moz-column-gap:20px; /* Firefox */
+	   -webkit-column-gap:20px; /* Safari and Chrome */
+	   column-gap:20px;
+	   -moz-column-rule:1px outset #bbb; /* Firefox */
+	   -webkit-column-rule:1px outset #bbb; /* Safari and Chrome */
+	   column-rule:1px outset #bbb;
+	   max-width: 800px;
+	}
+	#info {
+	  height: 100%;
+	  width: 100%;
+	  position: fixed;
+	  left: 0;
+	  top: 0;
+	  z-index: 1 !important;
+	  background-color: rgba(153, 153, 153, 0.62);	
+	  display:none;
+	}
+	#info div{
+	  padding:2em;
+	  background-color:#fff;
+	  margin: 0 auto;
+	  max-width: 600px;
+	  text-align: justify;
+	  margin-top:2em;
+	}
+	</style>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-35256103-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
 </head>
 <body class='with-3d-shadow with-transitions'>
 
