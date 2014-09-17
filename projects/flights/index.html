@@ -17,6 +17,7 @@
 			<ul>
 				<li id="about">About</li>
 				<li id="invert-btn">Switch colors</li>
+				<li id="transform-btn">Transform axes</li>
 			</ul>
 		</div>
 	</div>
@@ -53,6 +54,17 @@
 	<script src="http://d3js.org/d3.hive.v0.min.js"></script>
 <script>
 
+var width = 1280,
+    height = 680,
+    innerRadius = 10,
+    outerRadius = 430,
+	linear = true;
+	
+var angle = d3.scale.ordinal().domain(d3.range(4)).rangePoints([0, 2 * Math.PI]),
+    radius = d3.scale.linear().range([innerRadius, outerRadius]).nice(),
+	radius_sqrt = d3.scale.sqrt().range([innerRadius, outerRadius]).nice(),
+    color = d3.scale.category20().domain(d3.range(20));
+
 window.onload = function() {
 
 // Add menu actions
@@ -63,23 +75,36 @@ d3.select('#info').on('click', function () {
 	if (d3.event && (d3.event.srcElement || d3.event.target) == document.getElementById('info'))
 		d3.select('#info').style('display',null);
 });
-
-// Draw graph
 d3.select("#invert-btn").on('click', function () {
 	var body = d3.select("body");
 	var clas = "inverted";
 	body.classed(clas, !body.classed(clas));
 });
-
-var width = 1280,
-    height = 680,
-    innerRadius = 10,
-    outerRadius = 430;
+d3.select("#transform-btn").on('click', function () {
+	var r,
+		delay = 10,
+		ease = 'in-out'
+		duration = function (d,i) {return Math.random()*800;};
+	if(linear) {
+		r = radius_sqrt
+		linear = false;
+	} else {
+		r = radius;
+		linear = true;
+	}
 	
-var angle = d3.scale.ordinal().domain(d3.range(4)).rangePoints([0, 2 * Math.PI]),
-    radius = d3.scale.linear().range([innerRadius, outerRadius]).nice(),
-    color = d3.scale.category20().domain(d3.range(20));
+	d3.selectAll(".node")
+    .data(nodes).transition().ease(ease).delay(delay).duration(duration)
+	.attr('cx', function(d){return r(d.y);})
+	
+	d3.selectAll(".link")
+    .data(links).transition().ease(ease).delay(delay).duration(duration)
+    .attr("d", d3.hive.link()
+    .angle(function(d) { return d?angle(d.x):0; })
+    .radius(function(d) { return d?r(d.y):0; }))
+});
 
+// Draw graph
 var svg = d3.select("#graph").append("svg")
 	.attr("viewBox", "0, 0, " + width + ", " + height)
   .append("g")
