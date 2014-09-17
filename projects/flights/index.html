@@ -23,12 +23,24 @@
 	<div id="graph"></div>
 	<div id="info">
 		<div>
-		<h3>What?</h3>This graph visualizes the <a href="http://openflights.org/data.html" target="_blank">OpenFlights</a> data set which holds the information about airports and flights. In addition, the <a href="http://www.geonames.org/" target="_blank">GeoNames</a> data set was used to obtain population of the cities. Cities are represented by the circles which are organized into three main axes: Asian, European and North American. The closer the city is the the center of the graph the smaller its population. Size of circle represents the number of the airports that serve that particular city i.e. cities with big circles have many airports. Links represent the flight connections between the cities. For the visual purposes only intercontinental connections are shown.
+		<h3>What?</h3>
+		<p>This graph visualizes the <a href="http://openflights.org/data.html" target="_blank">OpenFlights</a> data set, which holds the information about airports around the globe and air traffic between them. In addition, the <a href="http://www.geonames.org/" target="_blank">GeoNames</a> data set was used to obtain the population value. Unfortunately, it was not always possible to map the cities from first data set to the cities from the second data set and therefore the graph visualizes only subset of the data.
+		</p>
+		<p>
+		Cities are represented by circles organized on three main axes: Asian, European and North American. Population number is expressed in a distance from the centre where far means more and close means less inhabitants. Size of a circle represents the number of airports that serve this particular location. Links serve as flight connections between cities. For the visual purposes, only intercontinental flights are shown.
+		</p>
 	   
-	    <h3>Why?</h3>Motivated by the <a href="http://neo4j.com/showmeyourgraph-rules/" target="_blank">Neo4j #ShowMeYourGraph Twitter Contest</a> for a graph visualization I finally girded up my lions to try working with the hive plot. <a href="http://www.hiveplot.net/" target="_blank">Hive plot</a> is a special graph layout by <a href="http://mkweb.bcgsc.ca/" target="_blank">Martin Krzywinski</a> which attempts to position the nodes in a meaningful way. I really like the idea as I agree that for networks with many nodes and connections it can give much more insights into the data set compared to other 'hair ball' styled layouts e.g. force directed.
+	    <h3>Why?</h3>
+		<p><a href="http://neo4j.com/showmeyourgraph-rules/" target="_blank">Neo4j #ShowMeYourGraph Twitter Contest</a> was my main motivation and a great reason behind many hours spent on experimenting and testing my skills and patience while working with the hive plot.
+		</p>
+		<p><a href="http://www.hiveplot.net/" target="_blank">Hive plot</a> is a type of a graph layout by <a href="http://mkweb.bcgsc.ca/" target="_blank">Martin Krzywinski</a> which attempts to organise large networks and position nodes in a more insightful way as opposed to other 'hair ball' styled layouts e.g. force directed.
+		</p>
 	   
-		<h3>How?</h3>Visualization was created using D3.js (starting from this <a href="http://bl.ocks.org/mbostock/2066415" target="_blank">template</a>) and the code is open and available on <a href="https://github.com/Domajno/Air-traffic-visualization.git" target="_blank">GitHub</a>.<br/>
-		Moreover, I decided to talk a very good friend of mine who is a professional photographer and a graphic designer into participating together. I took charge of the tedious work of data cleaning and preparation while he made sure that the final result is really pleasant to look at. At the end some scripting was added to make the experience interactive et voila. 
+		<h3>How?</h3>
+		<p>Visualization was created using D3.js (starting from this <a href="http://bl.ocks.org/mbostock/2066415" target="_blank">template</a>) and the code is open and available on <a href="https://github.com/Domajno/Air-traffic-visualization.git" target="_blank">GitHub</a>.
+		</p>
+		<p>I teamed up with a very good friend of mine who deals with digital media on a daily basis and while I took charge of the tedious work of data cleaning and preparation, he made sure that the final result is really pleasant to look at. In the final stage some scripting was added to make the experience interactive et voila.
+		</p>
 		
 		<p>Made with <3 by <a href="http://cygalski.pl/" target="_blank">Dominik Cygalski</a> and <a href="http://www.luke-photography.com/" target="_blank">Lukasz Gajdek.</a></p>
 		</div>
