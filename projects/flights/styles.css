@@ -11,8 +11,9 @@
 #links {
   float:right;
 }
-#links:hover{
+#links li:hover{
   cursor:pointer;
+  opacity: 0.7;
 }
 #links  li{
   display:inline;
