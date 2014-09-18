@@ -64,6 +64,13 @@ body.inverted{
   h1 { font-size: 1em; }
   li { font-size: 0.5em; }
   ul { margin: 0;}
+  .legend #legend {
+    margin-top: 2em;
+    margin-left: 1em;
+    width: 7em;
+    height: 7em;
+	}
+	#info {font-size:smaller;}
 
 }
 
