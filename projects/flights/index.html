@@ -17,7 +17,7 @@
 			<ul>
 				<li id="about">About</li>
 				<li id="invert-btn">Switch colors</li>
-				<li id="transform-btn">Transform axes</li>
+				<li id="transform-btn">Zoom</li>
 			</ul>
 		</div>
 	</div>
@@ -60,9 +60,9 @@ var width = 1280,
     outerRadius = 430,
 	linear = true;
 	
-var angle = d3.scale.ordinal().domain(d3.range(4)).rangePoints([0, 2 * Math.PI]),
-    radius = d3.scale.linear().range([innerRadius, outerRadius]).nice(),
-	radius_sqrt = d3.scale.sqrt().range([innerRadius, outerRadius]).nice(),
+var exp = 1,
+	angle = d3.scale.ordinal().domain(d3.range(4)).rangePoints([0, 2 * Math.PI]),
+    radius = d3.scale.pow().exponent(exp).range([innerRadius, outerRadius]).nice(),
     color = d3.scale.category20().domain(d3.range(20));
 
 window.onload = function() {
@@ -85,14 +85,14 @@ d3.select("#transform-btn").on('click', function () {
 		delay = 10,
 		ease = 'in-out'
 		duration = function (d,i) {return Math.random()*800;};
-	if(linear) {
-		r = radius_sqrt
-		linear = false;
-	} else {
-		r = radius;
-		linear = true;
-	}
-	
+	if (exp == 1) {
+		exp = 0.5;
+	} else if (exp == 0.5){
+		exp = 0.3;
+	} else if (exp == 0.3){
+		exp = 1;
+	} 
+	r = d3.scale.pow().exponent(exp).range([innerRadius, outerRadius]).nice();
 	d3.selectAll(".node")
     .data(nodes).transition().ease(ease).delay(delay).duration(duration)
 	.attr('cx', function(d){return r(d.y);})
