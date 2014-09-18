@@ -20,6 +20,7 @@
 				<li id="transform-btn">Zoom</li>
 			</ul>
 		</div>
+		<div id="legend"></div>
 	</div>
 	
 	<div id="graph"></div>
@@ -167,6 +168,7 @@ svg.append('g').attr('transform', function(d) {return 'rotate(' + (degrees(angle
 	.append('text').text("Asia");
 svg.append('g').attr('transform', function(d) {return 'rotate(' + (-degrees(angle(0))) + ')translate(-300,-3)';})
 	.append('text').text("N. America");
+	
 	
 function degrees(radians) {
   return radians / Math.PI * 180 - 90;
