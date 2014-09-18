@@ -84,13 +84,17 @@ d3.select("#transform-btn").on('click', function () {
 	var r,
 		delay = 10,
 		ease = 'in-out'
-		duration = function (d,i) {return Math.random()*800;};
+		duration = function (d,i) {return Math.random()*800;},
+		hide_labels = false;;
 	if (exp == 1) {
 		exp = 0.5;
+		hide_labels = true;
 	} else if (exp == 0.5){
 		exp = 0.3;
+		hide_labels = true;
 	} else if (exp == 0.3){
 		exp = 1;
+		hide_labels = false;
 	} 
 	r = d3.scale.pow().exponent(exp).range([innerRadius, outerRadius]).nice();
 	d3.selectAll(".node")
@@ -102,6 +106,8 @@ d3.select("#transform-btn").on('click', function () {
     .attr("d", d3.hive.link()
     .angle(function(d) { return d?angle(d.x):0; })
     .radius(function(d) { return d?r(d.y):0; }))
+	
+	d3.selectAll("text").transition().ease(ease).delay(delay).duration(duration).style('opacity', hide_labels ? 0 : 100);
 });
 
 // Draw graph
