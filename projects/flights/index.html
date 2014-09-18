@@ -18,6 +18,7 @@
 				<li id="about">About</li>
 				<li id="invert-btn">Switch colors</li>
 				<li id="transform-btn">Zoom</li>
+				<li id="legend-btn">Legend</li>
 			</ul>
 		</div>
 		<div id="legend"></div>
@@ -79,6 +80,11 @@ d3.select('#info').on('click', function () {
 d3.select("#invert-btn").on('click', function () {
 	var body = d3.select("body");
 	var clas = "inverted";
+	body.classed(clas, !body.classed(clas));
+});
+d3.select("#legend-btn").on('click', function () {
+	var body = d3.select("body");
+	var clas = "legend";
 	body.classed(clas, !body.classed(clas));
 });
 d3.select("#transform-btn").on('click', function () {
