@@ -18,7 +18,7 @@
     "entries": [
 		{
 			"timestamp": "September 18, 2014 00:00:00",
-            "title": "Graph visualization",
+            "title": "Air traffic visualization",
             "tags": ["project", "js", "d3", "vis"],
             "description": "<a href=\"http://neo4j.com/showmeyourgraph-rules/\">Neo4j #ShowMeYourGraph Twitter Contest</a> was my main motivation and a great reason behind many hours spent on experimenting and testing my skills and patience while working with the hive plot. <a href=\"http://www.hiveplot.net/\">Hive plot</a> is a special graph layout by <a href=\"http://mkweb.bcgsc.ca/\">Martin Krzywinski</a> which attempts to position the nodes in a meaningful way which can be interpreted. I really like the idea as I agree that for networks with many nodes and connections it can give much more insights into the data compared to other 'hair ball' styled layouts e.g. force directed. Moreover, I teamed up with <a href=\"http://www.luke-photography.com/\">Lukasz Gajdek</a> - a very good friend of mine who deals with digital media on a daily basis and while I took charge of the tedious work of data cleaning and preparation, he made sure that the final result is really pleasant to look at. In the final stage some scripting was added to make the experience interactive et voila.",
             "external_link": "projects/flights/",
