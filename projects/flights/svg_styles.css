@@ -10,6 +10,16 @@
 .legend #legend-arrow {
   display:block;
 }
+#legend-arrow path{
+  fill: #969696;
+}
+#legend-arrow line{
+  fill: none;
+  stroke: #969696;
+  stroke-width: 3; 
+  stroke-miterlimit: 10;
+}
+
 
 text {
   fill:rgba(150,150,150,0.54);
