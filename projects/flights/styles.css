@@ -54,6 +54,7 @@ body.inverted{
 
 .inverted.legend #legend {
   background: url(airport_white.svg);
+  opacity: 0.8;
 }
 
 
