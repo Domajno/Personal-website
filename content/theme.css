@@ -228,6 +228,7 @@ h2 {
 	color: #fff;
 	text-decoration: none;
 	display: none;
+	border-radius: 0.4em;
 }
 .selected .tag {
 	display: inline-block;
