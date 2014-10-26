@@ -57,7 +57,7 @@ $(function () {
 			
 			entries += 				'</div>'												
 			entries += 		'</div>';
-			entries += 		'<div class="title-bar">'+ e.title +'</div>';
+			entries += 		'<div class="title-bar"><h1>'+ e.title +'</h1></div>';
 			entries += 		'<div class="description" style="display: none;">' + e.description + '</div>';
 			entries += '</div>';
 		});

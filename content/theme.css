@@ -109,7 +109,7 @@ div.entry:hover{
 	box-shadow: 10px 10px 12px rgba(165, 165, 165, 0.15	);
 }
 
-.title-bar {
+.title-bar h1{
 	background: rgba(14, 182, 47, 0.75);
 	padding: 5px;
 	padding-left: 20px;
