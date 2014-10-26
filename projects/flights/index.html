@@ -1,16 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="svg_styles.css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400|Ubuntu:300,400|Open+Sans:400,300|Oxygen:400,300' rel='stylesheet' type='text/css'>
 	<title>Air traffic visualization</title>
+	<meta name="description" content="Interavtive graph visualization of OpenFlights data using hive plot graph layout to visualize airports and connections between them.">
+	<meta name="keywords" content="visualization,d3,air traffic,flighs,interactive,hive plot">
+	<meta name="author" content="Dominik Cygalski, Łukasz Gajdek">
 </head>
-
 <body>
-	
 	<div id="menu">
 		<h1>Air traffic visualization</h1>
 		<div id="links">
@@ -23,7 +23,6 @@
 		</div>
 		<div id="legend"></div>
 	</div>
-	
 	<div id="graph"></div>
 	<div id="info">
 		<div>
@@ -35,23 +34,19 @@
 		</p>
 		<p>Zoom button performs non-linear but monotonic transformation of the space so that the dense regions of small population are more visible on the graph.
 		</p>
-	   
-	    <h3>Why?</h3>
+	    	<h3>Why?</h3>
 		<p><a href="http://neo4j.com/showmeyourgraph-rules/" target="_blank">Neo4j #ShowMeYourGraph Twitter Contest</a> was my main motivation and a great reason behind many hours spent on experimenting and testing my skills and patience while working with the hive plot.
 		</p>
 		<p><a href="http://www.hiveplot.net/" target="_blank">Hive plot</a> is a type of a graph layout by <a href="http://mkweb.bcgsc.ca/" target="_blank">Martin Krzywinski</a> which attempts to organise large networks and position nodes in a more insightful way as opposed to other 'hair ball' styled layouts e.g. force directed.
 		</p>
-	   
 		<h3>How?</h3>
 		<p>Visualization was created using D3.js (starting from this <a href="http://bl.ocks.org/mbostock/2066415" target="_blank">template</a>) and the code is open and available on <a href="https://github.com/Domajno/Air-traffic-visualization.git" target="_blank">GitHub</a>.
 		</p>
 		<p>I teamed up with a very good friend of mine who deals with digital media on a daily basis and while I took charge of the tedious work of data cleaning and preparation, he made sure that the final result is really pleasant to look at. In the final stage some scripting was added to make the experience interactive et voila.
 		</p>
-		
 		<p>Made with <3 by <a href="http://cygalski.pl/" target="_blank">Dominik Cygalski</a> and <a href="http://www.luke-photography.com/" target="_blank">Lukasz Gajdek.</a></p>
 		</div>
 	</div>
-
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -60,13 +55,11 @@
 
 	  ga('create', 'UA-35256103-1', 'auto');
 	  ga('send', 'pageview');
-
 	</script>
 	<script src="airports.js"></script>
 	<script src="connections.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://d3js.org/d3.hive.v0.min.js"></script>
-	
 <script>
 
 var width = 1280,
