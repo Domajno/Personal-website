@@ -27,57 +27,18 @@ $(function () {
 		window.open('mailto:dominikcyg+w' + String.fromCharCode(64) + 'gmail.com');
 	});	
 	
-	// Download website content
-	$.getJSON('content/content.json', function(content) {
-		
-		// Save metadata
-		metadata = content.metadata;
-		$('#text').html(metadata.intro);
-		
-		// Add tag checkboxes
-		var checkboxes = '<ul><li><input type="checkbox" /> Filter:</li>';
-		Object.keys(metadata.tags).forEach(function (t) {
-			checkboxes += '<li><input type="checkbox" value="' + t + '"/>' + metadata.tags[t] + '</li>';
-		});
-		checkboxes += '</ul>'
-		$('#filter').html(checkboxes);
-		
-		// Render etries as windows
-		var entries = '';
-		content.entries.forEach(function (e) {
-			entries += '<div class="entry" data-tags="' + e.tags + '">';
-			entries += 		'<div class="window">'
-			entries += 			'<div class="overlay">'
-			var tags = ''
-			e.tags.forEach(function (t) { tags += '<a href="#" class="tag">' + metadata.tags[t] + '</a>';})
-			entries += 				tags
-			if(e.internal_link || e.external_link) entries += 				'<br/><br/><br/><a href="' + (e.internal_link || e.external_link)  + '"  target="_blank" class="tag">See the project</a>'
-			entries += 			'</div>'
-			entries += 			'<div class="buttons" style="background: #E4E2D6 url(' + metadata.img_dir + e.img_small + ') no-repeat top left">'
-			
-			entries += 				'</div>'												
-			entries += 		'</div>';
-			entries += 		'<div class="title-bar"><h1>'+ e.title +'</h1></div>';
-			entries += 		'<div class="description" style="display: none;">' + e.description + '</div>';
-			entries += '</div>';
-		});
-		$('#content').html(entries);
-		
-		$('#header, #content').bind('click', function () {
-			fadeText(this, metadata.intro);
-			$( 'div.window' ).removeClass('selected');			
-		});
-		
-		$('.entry').bind('click', function (event) {			
-			fadeText(this, $(this).find('.description').html());
-			$( 'div.window' ).removeClass('selected');
-			$( this ).find( 'div.window' ).addClass('selected');
-			event.stopPropagation();
-			//return false;
-		});
-		
+	$('#header, #content').bind('click', function () {
+		fadeText(this, intro);
+		$( 'div.window' ).removeClass('selected');			
 	});
-	
+		
+	$('.entry').bind('click', function (event) {			
+		fadeText(this, $(this).find('.description').html());
+		$( 'div.window' ).removeClass('selected');
+		$( this ).find( 'div.window' ).addClass('selected');
+		event.stopPropagation();
+		//return false;
+	});
 });
 
 function fadeText(containter, newText) {
