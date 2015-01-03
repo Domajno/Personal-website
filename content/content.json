@@ -22,7 +22,7 @@
 			"timestamp": "Decebmer 23, 2014 00:00:00",
             "title": "Eventeeo",
             "tags": ["project", "mobile"],
-            "description": "Cities in Poland open their data and make them accessible via public APIs. Let's use them in an innovative way. Eventeeo is a mobile application developed by <a href=\"https://twitter.com/michalwojtysiak\" target=\"_blank\">Michał Wojtysiak</a>,<a href=\"https://twitter.com/paciej00\" target=\"_blank\">Maciej Piotrowski</a> and me prepared for the <a href=\"http://bihapi.pl/\" target=\"_blank\">BIHAPI</a> competition. It is a mobile application which allows to find interesting events which take place in the city of Poznań while in the same time gathering lots of intersting data about users preferences. The idea is that when bored on the Saturday afternoon one wants to find something interesting to do but does not have a pricise idea in mind. Therefore, instead of presenting a full list of events to the user and let them browse Eventeeo presents only one event at the time to get user's full attention and only after they decide wheter it is interesting for them or not they can see the next one.",
+            "description": "Cities in Poland open their data and make them accessible via public APIs. Let's use them in an innovative way. Eventeeo is a mobile application developed by <a href=\"https://twitter.com/michalwojtysiak\" target=\"_blank\">Michał Wojtysiak</a>, <a href=\"https://twitter.com/paciej00\" target=\"_blank\">Maciej Piotrowski</a> and me. Prepared for the <a href=\"http://bihapi.pl/\" target=\"_blank\">BIHAPI</a> competition it is a mobile application which allows to find interesting events taking place in the city of Poznań while in the same time gathering a lot of intersting data about users' preferences. The idea is that when bored on Saturday afternoon one wants to find something interesting to do but does not have a pricise idea in mind. Therefore, instead of presenting a full list of events to the user and let them browse Eventeeo presents only one event at the time to get user's full attention and only after they decide wheter it is interesting for them or not they can see the next one. With time we could learn user profiles, suggest more relevant events and learn a lot about city habitants.",
             "internal_link": "projects/eventeeo/",
             "img_small": "eventeeo.png"
 		},
@@ -47,7 +47,7 @@
             "title": "Fashion trends",
             "tags": ["project", "js", "d3", "vis", "python"],
             "description": "End to end development - starting from the idea through research, backend implementation and frontend visualization of the results is really a satisfying experience. This simple application is hosted in the <a href=\"https://www.pythonanywhere.com/\" target=\"_blank\">cloud</a> and exploits many different components to collect and analyze tweets about fashion. Therefore, it can be seen as a social media monitoring tool which attempts to find useful information such as patterns or anomalies in the mass of unstructured text which people publish online. Although the analysis performed is rather simple the results are interesting and many further improvements can be considered e.g. deeper linguistic or sentiment analysis of the tweets and more complex analysis of the collected data.",
-            "external_link": "projects/fashion/",
+            "internal_link": "projects/fashion/",
             "img_small": "fashion.png"
 		},
 		{
@@ -78,7 +78,7 @@
             "timestamp": "August 02, 2009 00:00:00",
             "title": "Big boys fun time",
             "tags": ["project", "movie"],
-            "description": "",
+            "description": "In highschool, I used to make amateur movies. One of them, done together with a friend of mine Łukasz Lyszczarz was \"Big boys fun time\" (original title \"Męskie zabawy\"). The film tells a story about a war and irresponsible men who treat their soldiers, as if they were toys. And the conflict goes on even after the war is over...<br/><br/>This animation was done using <a href=\"http://en.wikipedia.org/wiki/Stop_motion\" target=\"_blank\">stop-motion</a> technique mixed with shots of real actors. It received several prizes on local polish film festivals e.g. <a href=\"http://www.mmpoznan.pl/314238/festiwal-kino-cisnien-klej-najlepszy\" target=\"_blank\">Kino Ciśnień</a> or <a href=\"http://www.tarnow.pl/Kultura/Aktualnosci-kulturalne/Zwyciezcy-27-Miedzynarodowego-Festiwalu-Filmowego-Dozwolone-do-21\" target=\"_blank\">Dozwolone do 21</a>.",
             "external_link": "http://youtu.be/81FL9ocliUU",
             "img_small": "zabawy.png"
         }
