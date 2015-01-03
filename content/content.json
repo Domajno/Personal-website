@@ -12,7 +12,8 @@
 			"d3": "D3.js",
 			"vis": "Visualization",
 			"python": "Python",
-			"mobile": "Mobile"
+			"mobile": "Mobile",
+			"movie": "Movie"
         },
         "img_dir": "content/img/"
     },
@@ -21,15 +22,15 @@
 			"timestamp": "Decebmer 23, 2014 00:00:00",
             "title": "Eventeeo",
             "tags": ["project", "mobile"],
-            "description": "Eventeeo is a ",
-            "external_link": "http://domajno.github.io/data-viz-challenge/",
+            "description": "Cities in Poland open their data and make them accessible via public APIs. Let's use them in an innovative way. Eventeeo is a mobile application developed by <a href=\"https://twitter.com/michalwojtysiak\" target=\"_blank\">Michał Wojtysiak</a>,<a href=\"https://twitter.com/paciej00\" target=\"_blank\">Maciej Piotrowski</a> and me prepared for the <a href=\"http://bihapi.pl/\" target=\"_blank\">BIHAPI</a> competition. It is a mobile application which allows to find interesting events which take place in the city of Poznań while in the same time gathering lots of intersting data about users preferences. The idea is that when bored on the Saturday afternoon one wants to find something interesting to do but does not have a pricise idea in mind. Therefore, instead of presenting a full list of events to the user and let them browse Eventeeo presents only one event at the time to get user's full attention and only after they decide wheter it is interesting for them or not they can see the next one.",
+            "internal_link": "projects/eventeeo/",
             "img_small": "eventeeo.png"
 		},
 		{
 			"timestamp": "Decebmer 13, 2014 00:00:00",
             "title": "Campaign targeting tool",
             "tags": ["project", "js", "d3", "vis"],
-            "description": "Localytics <a href=\"http://data-viz-challenge.localytics.com/\" target=\"_blank\">data visualization challenge</a> inspired me to create this project. The task was to create a visualization which will give the answer for the question on how to target a mobile application markating campaign. As I am not an online marketing expert I have decided to create a rather exploratory tool which will allow the experts to find the groups of the potential customers which will be most likely to respond to the campaign. To do that I have created an interactive <a href=\"http://en.wikipedia.org/wiki/Treemapping\" target=\"_blank\">treemap</a> which partitions all the users into subgroups and for each displays the value of certain metric e.g. average donation per user. Now, the domain expert can experiment with different divisions of the users into subgroups and easily spot interesting groups. Code of the project is open sourced and published on GitHub.",
+            "description": "Localytics <a href=\"http://data-viz-challenge.localytics.com/\" target=\"_blank\">data visualization challenge</a> inspired me to create this project. The task was to create a visualization which will give the answer for the question on how to target a mobile application markating campaign. As I am not an online marketing expert I have decided to create a rather exploratory tool which will allow the experts to find the groups of the potential customers i.e. those who will be most likely to respond positively to the campaign. To do that I have created an interactive <a href=\"http://en.wikipedia.org/wiki/Treemapping\" target=\"_blank\">treemap</a> which partitions all the users into subgroups and for each displays the value of a chosen metric e.g. average donation per user. Now, the domain expert can experiment with different partitions of the suctomers into subgroups and easily spot interesting ones. Code of the project is open sourced and published on GitHub.",
             "external_link": "http://domajno.github.io/data-viz-challenge/",
             "img_small": "campaign.png"
 		},
@@ -53,7 +54,7 @@
 			"timestamp": "June 20, 2013 00:00:00",
             "title": "Visualization for Open Xerox",
             "tags": ["project", "js", "webdev", "d3", "vis"],
-            "description": "The advent of modern web browsers and open web standards helps to abandon proprietary plugins and allows to create fully interactive content in the browser using open source technologies and standards. That, in the times of information overload leads to the popularization of the visualization tools which give efficient and elegant way for presenting and understanding data. During the internship which was a part of my master programme I had a chance to work in Xerox Research Cetnre Europe in France and develop a visualization framework which operates on top of the Open Xerox web platform. The framework was constructed using Java Script and <a href=\"http://d3js.org/\" target=\"_blank\">D3.js</a> library and is publicly available on <a href=\"http://open.xerox.com/\"  target=\"_blank\">Open Xerox</a>.",
+            "description": "The advent of modern web browsers and open web standards helps to abandon proprietary plugins and allows to create fully interactive content in the browser using open source technologies and standards. That, in the times of information overload leads to the popularization of the visualization tools which give efficient and elegant way for presenting and understanding data. During the internship which was a part of my master programme I had a chance to work in Xerox Research Centre Europe in France and develop a visualization framework which operates on top of the Open Xerox web platform. The framework was constructed using Java Script and <a href=\"http://d3js.org/\" target=\"_blank\">D3.js</a> library and is publicly available on <a href=\"http://open.xerox.com/\"  target=\"_blank\">Open Xerox</a> (only for registered users).",
             "external_link": "http://open.xerox.com/",
             "img_small": "ox_small.png"
 		},
@@ -69,9 +70,17 @@
             "timestamp": "April 02, 2009 00:00:00",
             "title": "Interactive CV",
             "tags": ["aboutme", "project", "cv", "flash", "vis"],
-            "description": "The idea originated while exploring different alternative ways of presenting a resume. Mind mapping techniques appeared particularly interesting however static images seemed to be boring and were not able to convey the dynamic multimedia content. Therefore, I have developed an interactive version of the Curriculum Vitae using Adobe Flash technology to display my resume in a form of a mind map. Mind maps are diagrams allowing to take notes and organize information in a nonlinear way and to outline it visually which is supposed to ease the process of memorization. This idea proved to be successful in attracting potential employers and winning a chance to get interviews as well as <a href=\"http://www.em-dmkm.eu/\" target=\"_blank\">Erasmus Mundus DMKM</a> master programme scholarship.",
+            "description": "The idea originated while exploring different alternative ways of presenting a resume. Mind mapping techniques appeared particularly interesting however static images seemed to be boring and were not able to convey the dynamic multimedia content. Therefore, I have developed an interactive version of the Curriculum Vitae using Adobe Flash technology to display my resume in a form of a mind map. Mind maps are diagrams allowing to take notes and organize information in a nonlinear way and to outline it visually which is supposed to ease the process of memorization. This idea proved to be successful in attracting potential employers and winning a chance to get interviews as well as <a href=\"http://www.em-dmkm.eu/\" target=\"_blank\">Erasmus Mundus DMKM</a> master program scholarship. Project is no longer supported; my up-to-date CV can be found <a href=\"/resume.pdf\" target=\"_blank\">here</a>",
             "internal_link": "projects/cv/",
             "img_small": "cv_min.png"
+        },
+		{
+            "timestamp": "August 02, 2009 00:00:00",
+            "title": "Big boys fun time",
+            "tags": ["project", "movie"],
+            "description": "",
+            "external_link": "http://youtu.be/81FL9ocliUU",
+            "img_small": "zabawy.png"
         }
     ]
 }
