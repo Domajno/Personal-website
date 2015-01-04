@@ -112,7 +112,6 @@ div.entry:hover{
 .title-bar h1{
 	background: rgba(14, 182, 47, 0.75);
 	padding: 5px;
-	padding-left: 20px;
 	height: 20px;
 	font-family: Gill Sans, Verdana;
 	font-size: 11px;
@@ -120,8 +119,8 @@ div.entry:hover{
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-weight: bold;
-	text-align: left;
 	font-family: 'Handlee', cursive;
+	text-align: center;
 } 
 .window {
 	height: 175px;
