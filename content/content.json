@@ -13,11 +13,22 @@
 			"vis": "Visualization",
 			"python": "Python",
 			"mobile": "Mobile",
-			"movie": "Movie"
+			"nlp": "Natural Language Processing",
+			"ml": "Machine Learning",
+			"movie": "Movie",
+			"startup": "Start-up"
         },
         "img_dir": "content/img/"
     },
     "entries": [
+		{
+			"timestamp": "April 16, 2015 00:00:00",
+            "title": "Travel Invasion",
+            "tags": ["project", "ml", "nlp", "startup", "webdev"],
+            "description": "<a href=\"http://travelinvasion.net/\" target=\"_blank\">Travel Invasion</a> - your alternative travel guide. Are you going to travel and would like to read interesting articles about your destination? Are you bored with typical travel guides which only mention mainstream tourist attractions? This website is for you! You can think of it as a search engine for travel blogs which allows you to search by destination; directly on the map. There are so many wonderful people travelling all over the world and sharing their experiences. All we want is to give you an easier access to those resources.<br/><br/>Started by a travel blogger <a href=\"http://dreamexplorewander.com/\" target=\"_blank\">Agata Filiana</a> and me the project is still in its early stage. We are developing algorithms that automatically index articles and try to discover the place they talk about using Machine Learning and Natural Language Processing techniques. Give it a try and send us your feedback!",
+            "external_link": "http://travelinvasion.net/",
+            "img_small": "travelinvasion.png"
+		},
 		{
 			"timestamp": "Decebmer 23, 2014 00:00:00",
             "title": "Eventeeo",
