@@ -48,6 +48,7 @@ body {
 .visual iframe {
 	width: 100%;
 	height: 15em;
+	border: 0;
 }
 
 #header h1 {
