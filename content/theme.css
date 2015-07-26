@@ -84,7 +84,7 @@ a:hover { color: #ffcc66 }
 @media screen and (max-width:730px) {
 	#content {
 		padding: 0em;
-		margin-top: 5em;
+		margin-top: 7em;
 }
 	.entry {
 		width: 100vw;
@@ -92,8 +92,6 @@ a:hover { color: #ffcc66 }
 		margin-top: 1em;
 		display: block;
 		padding: 1.5em;
-	}
-	.description {
-		width: 85%;
+		width: 90%;
 	}
 }
