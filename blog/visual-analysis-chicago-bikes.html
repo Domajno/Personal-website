@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Variation of the node-link diagram to visually analyze local patterns of network nodes rather than global trends while maintaining global geospatial context">
+	<meta name="keywords" content="data science,visualization,data mining,d3,software,interactive">
+	<meta name="author" content="Dominik Cygalski">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Visual analysis of transportation networks</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/content/theme.css">
+	<style type="text/css">
+
+		table {
+			background-color: #000;
+		}
+		table img{
+			display: block;
+			width: calc(100vw/24.8);
+		}
+		td {
+			color: #eee;
+			text-align: center;
+			font-size: 10px;
+		}
+		tr:first-child td {
+			padding: 0.2em 0 0.5em 0;
+		}
+		tr td:first-child {
+			padding: 0 0 0 1em;
+		}
+
+	</style>
+	<!--<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-35256103-1', 'auto');
+	  ga('send', 'pageview');
+
+
+	</script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+<div class="article">
+
+		<h1>Visual analysis of the Chicago bike rides</h1>
+
+		<p>
+		<a href="https://en.wikipedia.org/wiki/Trip_distribution" target="_blank">Origin-Destination (O-D)</a> matrices are prevalent data structure in the field of transportation analysis. They provide information on how many people move between fixed set of locations in a certain time interval e.g. between metro stations, bus stops or airports. They also represent the network where the nodes are places and edges are are formed by the people flows between them.
+
+		Visualizing this kind of data is challenging but potentially very beneficial. Understanding how people move across transportation network can result in the optimization of many important properties of the network e.g. cost reduction or travel time reduction. Understanding is also crucial for performing tasks such as fleet rebalancing and scheduling or spotting bottlenecks.
+		</p>
+
+		<p>
+		There are several excellent visualization types well suited for that task e.g. <a href="https://en.wikipedia.org/wiki/Chord_diagram" target="_blank">chord diagram</a> or <a href="http://circos.ca/" target="_blank">Circos</a> but due to the spatial dimension of the data we often expect a map representation to be used. In that case we could visualize the matrix as a graph where the nodes have fixed position defined by their geographical coordinates. We can choose to represent the flows of the people between the nodes using straight lines but in that case the picture quickly becomes cluttered and unreadable as the number of connections or nodes grows - see picture below, left side.
+
+		We could play with opacity to expose the main patterns or use techniques like <a href="http://bl.ocks.org/upphiminn/6515478" target="_blank">edge bundling</a> that try to represent the edges of the graph not as straight lines but as curved lines in order to reduce visual clutter and make global trends and pattern more easily noticeable - see picture below, right side. This technique focuses however on exposing global network patterns and little can be said about particular nodes.
+		</p>
+
+		<div style="text-align:center;margin-top:3em;">
+			<img src="visual-analysis-chicago-bikes/simple.png" alt="node-link diagram" width="30%" style="display:inline-block"/>
+			<img src="visual-analysis-chicago-bikes/eb.png" alt="node-link diagram" width="30%" style="display:inline-block"/>
+		</div>
+
+		<p>
+		<h2>Data</h2>
+		I will use Chicago bicycle data set which holds information about bicycle rides between different bike stations in the city of Chicago. The data comes from a bike sharing system in which people can rent a bicycle from one of the 476 stations across the city for a short period of time and after they use it they return the bicycle at a different station (I will refer to it as a trip). This means that the nodes of the network are bicycle stations and nodes are the trips between them. Data can be collected because each user of the network uses special key when renting a bike. Full data set spans over several weeks and was released as a part of the data visualization challenge organized by the <a href="https://www.divvybikes.com/datachallenge" target="_blank">Divvy</a>. For the purpose of this analysis only one week of the data from August 26<sup>th</sup> to September 1<sup>st</sup> 2013
+		was selected. Data was aggregated in one hour intervals and the number of trips between particular two stations can be considered as a weight of the edge in the graph which will be further used in the visualization and will be mapped to the opacity of the edges. Two networks presented aboves represent one selected interval from that dataset.
+	</p>
+
+		<p>
+		<h2>Variation of the node-link diagram</h2>
+		The starting point to generate the proposed variation of the node-link diagram is a node-link diagram with edges represented by the straight lines like in the picture above on the left side. The proposed variation will modify how each edge is drawn. Instead of using a solid color for the entire edge a color gradient is used. The color of the gradient at the origin node is different than the color of the gradient at the destination node. Then, only first and last 10% of the edge is displayed with the smooth opacity change from 100% to 0% - as explained in diagram below. 10% is an arbitrary choice and could vary depending on the network. Moreover, the opacity of the entire edge is mapped to the variable mentioned in the Data section which is the number of the trips between certain bike stations. This variable is mapped to the opacity of the edge using linear scale in the way that the edge with the maximum value in the data set will have opacity value of 1 and edge with the minimum value will have opacity value of 0.
+		</p>
+
+		<div style="text-align:center;margin-bottom:2em;">
+		<img src="visual-analysis-chicago-bikes/diagram.png" alt="node-link diagram" width="60%"/>
+		</div>
+
+		<p>
+		Applying above mentioned rules to the node-link diagram of the Chicago bicycle sharing network data set with the blue color for the origin and orange color for the destination can be seen on picture below. It shows the bicycle trips between 4PM and 5PM on Wednesday August 28<sup>th</sup> - same as on pictures above. As a result the overall network structure disappears but all the nodes and their incoming and outgoing connections are visible.
+		</p>
+
+		<p>
+		Each node is characterized by its own local pattern which can be effectively analyzed giving immediate insights on how the station operates. For example whether there are more incoming or outgoing trips can be judged by analyzing the color of the node. Analyzing one particular node we can see incoming trips in orange and outgoing trips in blue. Length of the lines represent how long the trips were. We can also observe directions of the outgoing and incoming trips.
+		</p>
+
+		<p>
+		Going back to the map below the whole bike sharing system can be analyzed. What we see is the afternoon view of the city with many people taking bicycles from the city center (blue nodes) and going back to the residential areas on the city outskirts (orange nodes).
+		Tasks like spotting the outliers which could be stations operating small number of rides or identifying unbalanced stations i.e. those which operate mostly outgoing or mostly incoming rides can be performed quickly using this visual representation.
+		</p>
+
+		<img src="visual-analysis-chicago-bikes/map.png" alt="node-link diagram" width="100%"/>
+
+		<p>
+		<h2>Temporal analysis</h2>
+		This analysis can be easily extended with the temporal dimension to see how the local pattern of a selected node changes over the time. Image below shows hourly patterns of selected station from the city centre throughout the week. Daily cycles of morning and afternoon peak hours and no activity during the night are immediately noticeable. Colors indicate that majority of traffic in the morning is comprised of the incoming trips and the outgoing trips in the afternoon. During the weekend however the pattern does not hold and is completely different with much less activity.
+		</p>
+</div>
+
+<div style="overflow-x: hidden;margin-bottom:3em; margin-top:1em;">
+	<table style="border-collapse:collapse;border-spacing: 0;" border="0" cellpadding="0" cellspacing="0">
+	</table>
+</div>
+<script type="text/javascript">
+
+	var data = [],
+		firstIndex = 208,
+		path = "visual-analysis-chicago-bikes/tiles/",
+		acc = [];
+	for (var i=0; i<=168; i++) {
+		if(i%24===0 && i!==0) {
+			data.push(acc);
+			acc = [];
+		}
+		acc.push("svg_" + (firstIndex+i) + ".png");
+	}
+
+	var tr = d3.select("table").selectAll("tr")
+				.data(data)
+				.enter()
+				.append("tr");
+
+	var td = tr.selectAll("td")
+				.data(function(d) { return d; })
+				.enter()
+				.append("td")
+				.append("img")
+				.attr("src", function(d){return path + d;});
+
+
+	// Add labels
+	var time_labels = [],
+		day_labels = {0:"", 1:"mon",2:"tue",3:"wed",4:"thu",5:"fri",6:"sat",7:"sun"}
+	for(var i = 0 ;i<24;i++){
+		time_labels.push(i + " h");
+	}
+	d3.select('table').insert("tr", "tr").selectAll('td').data(time_labels).enter().append('td').text(function(d){return d;});
+	d3.selectAll('tr').insert('td','td').text(function(d, i){return day_labels[i];})
+
+</script>
+
+
+<div class="article">
+<p>
+Presented variation of the node-link is by no means complete and can be further changed and modified according to particular user's needs.
+Future improvements could involve working on different than simple opacity color blending modes to better reflect directions in which incoming and outgoing flows are overlapping.
+Interactive version could be also developed to provide more information on demand e.g. when user hovers over the node full edge length could be displayed to provide even more context of the network as a whole.
+</p>
+<a href="/">Back to main page</a>
+</div>
+
+<div id="disqus_thread" class="article"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'cygalski';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</body>
+</html>

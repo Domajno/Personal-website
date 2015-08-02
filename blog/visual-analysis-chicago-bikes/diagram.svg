@@ -1,0 +1,49 @@
+<svg width="640.0000000000001" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <linearGradient id="svg_7">
+   <stop offset="0" stop-color="#1d00ff"/>
+   <stop offset="0.19403" stop-opacity="0" stop-color="#1d00ff"/>
+   <stop offset="0.7995" stop-opacity="0" stop-color="#ffbb00"/>
+   <stop offset="0.99872" stop-color="#ffbb00"/>
+   <stop offset="1" stop-opacity="0.99219" stop-color="#ffbb00"/>
+  </linearGradient>
+  <linearGradient id="svg_2">
+   <stop stop-color="#1d00ff" stop-opacity="0.99609" offset="0"/>
+   <stop stop-color="#1d00ff" stop-opacity="0.99609" offset="0.19403"/>
+   <stop stop-color="#ffbb00" stop-opacity="0.98828" offset="0.7995"/>
+   <stop stop-color="#ffbb00" stop-opacity="0.99219" offset="0.99872"/>
+   <stop stop-color="#ffbb00" stop-opacity="0.99219" offset="1"/>
+  </linearGradient>
+  <clipPath id="cut-off-bottom">
+   <rect id="svg_20" height="40" width="496.00002" y="271.42188" x="69.99998"/>
+  </clipPath>
+  <linearGradient id="svg_19">
+   <stop stop-color="#1d00ff" offset="0"/>
+   <stop stop-color="#1d00ff" stop-opacity="0" offset="0.19403"/>
+   <stop stop-color="#ffbb00" stop-opacity="0" offset="0.7995"/>
+   <stop stop-color="#ffbb00" offset="0.99872"/>
+   <stop stop-color="#ffbb00" stop-opacity="0.99219" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g stroke="null">
+  <image clip-path="url(#cut-off-bottom)" x="72.50018" y="243.44117" width="491.74999" height="173.55882" id="svg_21" xlink:href="http://nickbriz.com/thenewaesthetic/images/ex1.png"/>
+  <title>Layer 1</title>
+  <rect stroke="#000000" id="svg_1" height="40" width="496.00002" y="121" x="69" stroke-width="2" fill="#eeeeee"/>
+  <rect stroke="#000000" id="svg_3" height="40" width="496.00002" y="271.42188" x="69.99998" stroke-width="2" fill="url(#svg_7)"/>
+  <line stroke="#000000" id="svg_5" y2="161.96473" x2="162.12495" y1="120.89064" x1="162.12495" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" fill="none"/>
+  <line stroke="#000000" id="svg_6" y2="161.11517" x2="473.75" y1="120.04108" x1="473.75" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" fill="none"/>
+  <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="64.98432" y="115.12501" id="svg_4" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" font-style="normal" font-weight="normal">100%</text>
+  <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="163.81245" y="115.13283" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_8">0%</text>
+  <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="574.99995" y="115.13283" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_9">100%</text>
+  <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="73.85932" y="96.08595" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_10">Opacity:</text>
+  <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="478.81245" y="115.12501" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_11">0%</text>
+  <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="65.85938" y="216.25" id="svg_12" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">Origin</text>
+  <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="554" y="216.25" id="svg_13" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">Destination</text>
+  <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="66.71875" y="236.6875" id="svg_14" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve">color</text>
+  <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="554" y="236.6875" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" id="svg_15">color</text>
+  <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="116.74995" y="157.8672" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" font-style="normal" font-weight="normal" id="svg_16">10%</text>
+  <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="524.74995" y="157.85939" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" font-style="normal" font-weight="normal" id="svg_17">10%</text>
+  <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="312.49995" y="157.85939" font-size="16" font-family="Sans-serif" text-anchor="middle" xml:space="preserve" font-style="normal" font-weight="normal" id="svg_18">80%</text>
+ </g>
+</svg>
