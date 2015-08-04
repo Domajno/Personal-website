@@ -9,6 +9,8 @@
 	<title>Visual analysis of transportation networks</title>
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="/content/theme.css">
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 	<style type="text/css">
 
 		table {
@@ -96,7 +98,11 @@
 		Tasks like spotting the outliers which could be stations operating small number of rides or identifying unbalanced stations i.e. those which operate mostly outgoing or mostly incoming rides can be performed quickly using this visual representation.
 		</p>
 
-		<img src="visual-analysis-chicago-bikes/map.png" alt="node-link diagram" width="100%"/>
+		<div id="map" style="height:600px;margin-bottom:1em;"></div>
+		<p>
+		Change the opacity of the gradient to see how this visualization is derived from the simple node-link diagram:
+		<input style="width:100%" type="range" name="opacity" min="0" max="100" value="0" id="slider">
+		</p>
 
 		<p>
 		<h2>Temporal analysis</h2>
@@ -110,6 +116,84 @@
 </div>
 <script type="text/javascript">
 
+	// DISPLAY MAP,,12
+	var map = L.map('map', {
+		maxBounds: L.latLngBounds(L.latLng(41.65, -87.85), L.latLng(42, -87.45)),
+		zoomControl: false,
+	}).setView([41.89, -87.65], 13);
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 15,
+		minZoom: 12,
+    id: 'dominikcyg.n363kg61',
+    accessToken: 'pk.eyJ1IjoiZG9taW5pa2N5ZyIsImEiOiJRV0RzWTFNIn0.tOPs-vNJ37j0dlWCg6zhhg'
+	}).addTo(map);
+
+	var tmpLine = L.polyline([[0,0], [1,1]]).addTo(map),
+			svg = d3.select("svg").style("background-color", "rgba(0, 0, 0, 0.69)"),
+			defs =  svg.append("defs"),
+		  gradient = defs.append("linearGradient")
+		                        .attr("id", "g1")
+		                        .attr("x1", "0")
+		                        .attr("y1", "0")
+		                        .attr("x2", "100%")
+		                        .attr("y2", "100%");
+	gradient.append("stop").attr("offset", "0%").attr("stop-color", "#ffbb00");
+	gradient.append("stop").attr("offset", "10%").attr("stop-color", "#ffbb00").attr("stop-opacity", 0).classed("pp", true);
+	gradient.append("stop").attr("offset", "90%").attr("stop-color", "#1d00ff").attr("stop-opacity", 0).classed("pp", true);
+	gradient.append("stop").attr("offset", "100%").attr("stop-color", "#1d00ff");
+		    defs.append("linearGradient")
+		        .attr("id", "g2")
+		        .attr("xlink:href", "#g1")
+		        .attr("x1", "0")
+		        .attr("y1", "100%")
+		        .attr("x2", "100%")
+		        .attr("y2", "0");
+		    defs.append("linearGradient")
+		        .attr("id", "g3")
+		        .attr("xlink:href", "#g1")
+		        .attr("x1", "100%")
+		        .attr("y1", "0")
+		        .attr("x2", "0")
+		        .attr("y2", "0");
+		    defs.append("linearGradient")
+		        .attr("id", "g4")
+		        .attr("xlink:href", "#g1")
+		        .attr("x1", "100%")
+		        .attr("y1", "0")
+		        .attr("x2", "0")
+		        .attr("y2", "100%");
+		map.removeLayer(tmpLine);
+
+
+	displayNetwork = function(data) {
+		data.map(function(item){
+        // Compute angle - used to apply gradient with correct orientation
+        var gradient = "g1",
+            angle = Math.atan2(item.x2 - item.x1, item.y2 - item.y1) * 180/Math.PI;
+        if (angle > 0 && angle <= 90) {
+            gradient = "g2";
+        } else if (angle > 90 && angle <= 180) {
+            gradient = "g3";
+        } else if (angle < -90 && angle > -180 ) {
+            gradient = "g4";
+        }
+
+        // Create marker
+        var point1 = new L.LatLng(item.y1, item.x1),
+            point2 = new L.LatLng(item.y2, item.x2);
+        L.polyline([point1, point2],{ color: "url(#" + gradient + ")", opacity: item.o }).addTo(map);
+
+    });
+	};
+
+	// Interact with slider
+	d3.select("#slider").on("input", function(e) {
+		var value = parseInt(d3.select(this).node().value);
+		d3.selectAll(".pp").attr("stop-opacity", value/100);
+	});
+
+	// DISPLAY TABLE OF IMAGES
 	var data = [],
 		firstIndex = 208,
 		path = "visual-analysis-chicago-bikes/tiles/",
@@ -169,7 +253,7 @@ Interactive version could be also developed to provide more information on deman
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
+<script src="visual-analysis-chicago-bikes/network.js"></script>
 
 </body>
 </html>
