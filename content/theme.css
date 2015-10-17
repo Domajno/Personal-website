@@ -105,12 +105,10 @@ div.article {
 		margin-top: 7em;
 }
 	.entry {
-		width: 100vw;
+		width: auto;
 		margin: 0;
 		margin-top: 1em;
 		display: block;
-		padding: 1.5em;
-		width: 90%;
 	}
 	div.article {
 		max-width: 90vw;
