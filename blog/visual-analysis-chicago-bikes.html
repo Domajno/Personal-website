@@ -157,9 +157,9 @@
 		</p>
 
 		<p>
-		There are several excellent visualization types well suited for that task e.g. <a href="https://en.wikipedia.org/wiki/Chord_diagram" target="_blank">chord diagram</a> or <a href="http://circos.ca/" target="_blank">Circos</a> but due to the spatial dimension of the data we often expect a map representation to be used. In that case we could visualize the matrix as a graph where the nodes have fixed position defined by their geographical coordinates. We can choose to represent the flows of the people between the nodes using straight lines, which would form a node-link diagram, but in that case the picture quickly becomes cluttered and unreadable as the number of connections or nodes grows - see picture below, left side.
+		There are several excellent visualization types well suited for presenting origin-destination data e.g. <a href="https://en.wikipedia.org/wiki/Chord_diagram" target="_blank">chord diagram</a> or <a href="http://circos.ca/" target="_blank">Circos</a> but due to the spatial dimension of the data we often expect a map representation to be used. In that case we could visualize the matrix as a graph where the nodes have fixed position defined by their geographical coordinates. We can choose to represent the flows of the people between the nodes using straight lines, which would form a node-link diagram, but in that case the picture quickly becomes cluttered and unreadable as the number of connections or nodes grows - see picture below, left side.
 
-		We could play with opacity to expose the main patterns or use techniques like <a href="http://bl.ocks.org/upphiminn/6515478" target="_blank">edge bundling</a> that try to represent the edges of the graph not as straight lines but as curved lines in order to reduce visual clutter and make global trends and pattern more easily noticeable - see picture below, right side. This technique focuses however on exposing global network patterns and little can be said about particular nodes. In this article I will show a variation of the node-link diagram that could be useful for certain use cases.
+		We could play with the opacity to expose the main patterns or use techniques like <a href="http://bl.ocks.org/upphiminn/6515478" target="_blank">edge bundling</a> that try to represent the edges of the graph not as straight but as curved lines in order to reduce visual clutter and make global trends and pattern more easily noticeable - see picture below, right side. This technique focuses however on exposing global network patterns and little can be said about particular nodes. In this article a variation of the node-link diagram is presented that could be useful to analyze the local properties of the network.
 		</p>
 
 		<div style="text-align:center;margin-top:3em;">
@@ -183,7 +183,7 @@
 		</div>
 
 		<p>
-		Applying above mentioned rules to the node-link diagram of the Chicago bicycle sharing network data set with the blue color for the origin and orange color for the destination can be seen on picture below. It shows the bicycle trips between 4PM and 5PM on Wednesday August 28<sup>th</sup> - same as two networks in the first picture of this article. As a result the overall network structure disappears but all the nodes and their incoming and outgoing connections are visible.
+		Applying above mentioned rules to the node-link diagram of the Chicago bicycle sharing network data set with the blue color for the origin and orange color for the destination can be seen on picture below. The network is places on top of the Chicago city map. It shows the bicycle trips between 4PM and 5PM on Wednesday August 28<sup>th</sup> - same as two networks in the first picture of this article. As a result the overall network structure disappears but all the nodes and their incoming and outgoing connections are visible.
 		</p>
 
 		<p>
@@ -203,7 +203,7 @@
 
 		<p>
 		<h2>Temporal analysis</h2>
-		This analysis can be easily extended with the temporal dimension to see how the local pattern of a selected node changes over the time. Image below shows hourly patterns of selected station from the city centre throughout the week. Daily cycles of morning and afternoon peak hours and no activity during the night are immediately noticeable. Colors indicate that majority of traffic in the morning is comprised of the incoming trips and the outgoing trips in the afternoon. During the weekend however the pattern does not hold and is completely different with much less activity.
+		This analysis can be easily extended with the temporal dimension to see how the local pattern of a selected node changes over the time. Image below shows hourly patterns of selected station from the city centre throughout the selected week. Daily cycles of morning and afternoon peak hours and no activity during the night are immediately noticeable. Colors indicate that majority of traffic in the morning is comprised of the incoming trips and the outgoing trips in the afternoon. During the weekend however the pattern does not hold and is completely different with much less activity.
 		</p>
 </div>
 
