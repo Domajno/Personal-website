@@ -1,233 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="description" content="This application monitors Twitter for all the messages containing the word skirt to analyze the trends.">
-	<meta name="keywords" content="data visualization,nvd3,fashion trends,visual analytics,interactive,social media monitoring,streamgraph,python">
-	<meta name="author" content="Dominik Cygalski">
-	<link href="./nv.d3.min.css" rel="stylesheet" type="text/css">
-	<title>Fashion trends</title>
-	<style>
+  <meta charset="utf-8">
+  <meta name="description" content="This application monitors Twitter for all the messages containing the word skirt to analyze the trends.">
+  <meta name="keywords" content="data visualization,nvd3,fashion trends,visual analytics,interactive,social media monitoring,streamgraph,python">
+  <meta name="author" content="Dominik Cygalski">
+  <link href="./nv.d3.min.css" rel="stylesheet" type="text/css">
+  <title>Fashion trends</title>
+  <style>
 
-	body {
-	  overflow-y:scroll;
-	  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-	  font-size: 11px;
-	  letter-spacing: 1px;
-	  margin: 4em;
-	}
+  body {
+    overflow-y:scroll;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin: 4em;
+  }
 
-	text {
-	  font: 12px sans-serif;
-	}
+  text {
+    font: 12px sans-serif;
+  }
 
-	#chart1, #chart2 {
-	  height: 500px;
-	}
+  #chart1, #chart2 {
+    height: 500px;
+  }
 
-	h1 {
-	  font-family: times, Times New Roman, times-roman, georgia, serif;
-	  color: #444;
-	  margin: 0;
-	  padding: 0px 0px 6px 0px;
-	  font-size: 51px;
-	  line-height: 44px;
-	  letter-spacing: -2px;
-	  font-weight: bold;
-	}
-	h2 {
-	   font-family: Gill Sans, Verdana;
-	   font-size: 11px;
-	   line-height: 14px;
-	   text-transform: uppercase;
-	   letter-spacing: 2px;
-	   font-weight: bold;
-	}
-	#description{
-	   -moz-column-count: 2;
-	   -webkit-column-count: 2;
-	   column-count: 2;
-	   text-align: justify;	
-	   -moz-column-gap:20px; /* Firefox */
-	   -webkit-column-gap:20px; /* Safari and Chrome */
-	   column-gap:20px;
-	   -moz-column-rule:1px outset #bbb; /* Firefox */
-	   -webkit-column-rule:1px outset #bbb; /* Safari and Chrome */
-	   column-rule:1px outset #bbb;
-	   max-width: 800px;
-	}
-	#info {
-	  height: 100%;
-	  width: 100%;
-	  position: fixed;
-	  left: 0;
-	  top: 0;
-	  z-index: 1 !important;
-	  background-color: rgba(153, 153, 153, 0.62);	
-	  display:none;
-	}
-	#info div{
-	  padding:2em;
-	  background-color:#fff;
-	  margin: 0 auto;
-	  max-width: 600px;
-	  text-align: justify;
-	  margin-top:2em;
-	}
-	</style>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  h1 {
+    font-family: times, Times New Roman, times-roman, georgia, serif;
+    color: #444;
+    margin: 0;
+    padding: 0px 0px 6px 0px;
+    font-size: 51px;
+    line-height: 44px;
+    letter-spacing: -2px;
+    font-weight: bold;
+  }
+  h2 {
+     font-family: Gill Sans, Verdana;
+     font-size: 11px;
+     line-height: 14px;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     font-weight: bold;
+  }
+  #description{
+     -moz-column-count: 2;
+     -webkit-column-count: 2;
+     column-count: 2;
+     text-align: justify;
+     -moz-column-gap:20px; /* Firefox */
+     -webkit-column-gap:20px; /* Safari and Chrome */
+     column-gap:20px;
+     -moz-column-rule:1px outset #bbb; /* Firefox */
+     -webkit-column-rule:1px outset #bbb; /* Safari and Chrome */
+     column-rule:1px outset #bbb;
+     max-width: 800px;
+  }
+  #info {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1 !important;
+    background-color: rgba(153, 153, 153, 0.62);
+    display:none;
+  }
+  #info div{
+    padding:2em;
+    background-color:#fff;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: justify;
+    margin-top:2em;
+  }
+  </style>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-35256103-1', 'auto');
-	  ga('send', 'pageview');
+    ga('create', 'UA-35256103-1', 'auto');
+    ga('send', 'pageview');
 
-	</script>
+  </script>
 </head>
 <body class='with-3d-shadow with-transitions'>
 
   <div style="margin-bottom: 50px;">
-	<div style="float:left; margin: 0px 50px 0px 10px;">
-		<h1>Fashion trends</h1>
-		<h2>Social media monitoring - Skirts</h2>
-	</div>
-	<div style="float:left; padding: 10px;" id="description">
-		This application monitors Twitter for all the messages containing the word <b>skirt</b> and collects the adjective standing directly before it. All the results are aggregated daily and stored in the database. In the graph below the top ten most frequent adjectives are presented; all the others are grouped together under the <i>other</i> category. The visualization is interactive - give it a try and play with data. <a href="#" id="read-more">Read more</a>	
-	</div>
+  <div style="float:left; margin: 0px 50px 0px 10px;">
+    <h1>Fashion trends</h1>
+    <h2>Social media monitoring - Skirts</h2>
+  </div>
+  <div style="float:left; padding: 10px;" id="description">
+    This application monitors Twitter for all the messages containing the word <b>skirt</b> and collects the adjective standing directly before it. All the results are aggregated daily and stored in the database. In the graph below the top ten most frequent adjectives are presented. On September 1st school starts, but what happened on July 3rd? The visualization is interactive - give it a try and play with the data. <a href="#" id="read-more">Read more</a>
+  </div>
   </div>
 
   <div id="info">
-	<div>
-	<h2>Why skirts?</h2> It is just an example. Fashion seems to be a natural use case for such analysis. As for the language complexity skirts are less challenging than for example dresses as the word <i>dress</i> can be used both as a noun or a verb. Similarly, analyzing shirts or other parts of the wardrobe would require additional separation techniques to differentiate between male and female clothing and therefore skirts seems to be a neat example. Technically, following other products e.g. beer requires more computational power due to the large number of tweets about it.
-   
-    <h2>How?</h2> The Fashion Trends application uses many technologies. Core functionality is written in Python with the use of <a href="https://dev.twitter.com/docs/streaming-apis/" target="_blank">Twitter Streaming API</a> and <a href="https://github.com/ryanmcgrath/twython/" target="_blank">Twython</a> module to collect the tweets. Data is written into <a href="http://www.mysql.com/" target="_blank">MySQL</a> database each time a relevant tweet appears. Once a day the data is pulled from MySQL and pushed into <a href="http://mongodb.org/" target="_blank">MongoDB</a> hosted on <a href="https://mongolab.com/" target="_blank">mongolab.com</a>. API to query the aggregated data in MongoDB is also written in Python using the <a href="http://bottlepy.org/" target="_blank">Bottle framework</a>. All is hosted on <a href="http://pythonanywhere.com" target="_blank">pythonanywhere.com</a>. Frontend interface uses <a href="http://nvd3.org/" target="_blank">NVD3 re-usable charts</a> library written in JavaScript which builds on top of <a href="d3js.org" target="_blank">D3.js</a> to provide the interactive visualization. 
-	
-	<p>See more at <a href="http://cygalski.pl/">cygalski.pl</a></p>
-	</div>
+  <div>
+    <h2>Why skirts?</h2> It is just an example. Fashion seems to be a natural use case for such analysis. As for the language complexity skirts are less challenging than for example dresses as the word <i>dress</i> can be used both as a noun or a verb. Similarly, analyzing shirts or other parts of the wardrobe would require additional separation techniques to differentiate between male and female clothing and therefore skirts seems to be a neat example. Technically, following other products e.g. beer requires more computational power due to the large number of tweets about it.
+    <h2>How?</h2> The Fashion Trends application uses many technologies. Core functionality is written in Python with the use of <a href="https://dev.twitter.com/docs/streaming-apis/" target="_blank">Twitter Streaming API</a> and <a href="https://github.com/ryanmcgrath/twython/" target="_blank">Twython</a> module to collect the tweets. Data is written into <a href="http://www.mysql.com/" target="_blank">MySQL</a> database each time a relevant tweet appears. Once a day the data is pulled from MySQL and pushed into <a href="http://mongodb.org/" target="_blank">MongoDB</a> hosted on <a href="https://mongolab.com/" target="_blank">mongolab.com</a>. API to query the aggregated data in MongoDB is also written in Python using the <a href="http://bottlepy.org/" target="_blank">Bottle framework</a>. All is hosted on <a href="http://pythonanywhere.com" target="_blank">pythonanywhere.com</a>. Frontend interface uses <a href="http://nvd3.org/" target="_blank">NVD3 re-usable charts</a> library written in JavaScript which builds on top of <a href="d3js.org" target="_blank">D3.js</a> to provide the interactive visualization.
+    <p>See more at <a href="http://cygalski.pl/">cygalski.pl</a></p>
   </div>
-  
+  </div>
+
   <div>
     <svg id="chart1"></svg>
   </div>
 
 
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="./nv.d3.min.js"></script>
-<script src="./src/utils.js"></script>
-<script src="./src/models/axis.js"></script>
-<script src="./src/tooltip.js"></script>
-<script src="./src/interactiveLayer.js"></script>
-<script src="./src/models/legend.js"></script>
-<script src="./src/models/axis.js"></script>
-<script src="./src/models/scatter.js"></script>
-<script src="./src/models/stackedArea.js"></script>
-<script src="./src/models/stackedAreaChart.js"></script>
-<script>
-
-window.onload = function() {
-
-d3.select('#read-more').on('click', function () {
-	d3.select('#info').style('display','block');
-});
-d3.select('#info').on('click', function () {
-	if (d3.event && d3.event.srcElement == document.getElementById('info'))
-		d3.select('#info').style('display',null);
-});
-
-
-renderDiagram = function(dataset) {
-
-	// TODO - if there is any day missing the visualization will fail!!!
-	histcatexplong = dataset.map(function (series) {
-		 return { 
-			 key:series.a,
-			 values:series.c.map(function(subseries) {return [subseries.d, subseries.n];})
-		 };
-	});
-
-	//an example of harmonizing colors between visualizations
-	//observe that Consumer Discretionary and Consumer Staples have
-	//been flipped in the second chart
-	var colors = d3.scale.category20c();
-	keyColor = function(d, i) {return colors(d.key)};
-
-	var chart;
-	nv.addGraph(function() {
-	  chart = nv.models.stackedAreaChart()
-				   // .width(600).height(500)
-					.useInteractiveGuideline(true)
-					.x(function(d) { return new Date(d[0]) })
-					.y(function(d) { return d[1] })
-					.color(keyColor)
-					.transitionDuration(300);
-					//.clipEdge(true);
-
-	// chart.stacked.scatter.clipVoronoi(false);
-
-	  chart.xAxis
-		  .tickFormat(function(d) { return d3.time.format('%x')(new Date(d)) });
-
-	  chart.yAxis
-		  .tickFormat(d3.format(',.2f'));
-
-	  d3.select('#chart1')
-		.datum(histcatexplong)
-		.transition().duration(1000)
-		.call(chart)
-		// .transition().duration(0)
-		.each('start', function() {
-			setTimeout(function() {
-				d3.selectAll('#chart1 *').each(function() {
-				  //console.log('start',this.__transition__, this)
-				  // while(this.__transition__)
-				  if(this.__transition__)
-					this.__transition__.duration = 1;
-				})
-			  }, 0)
-		  })
-		// .each('end', function() {
-		//         d3.selectAll('#chart1 *').each(function() {
-		//           console.log('end', this.__transition__, this)
-		//           // while(this.__transition__)
-		//           if(this.__transition__)
-		//             this.__transition__.duration = 1;
-		//         })});
-
-	  nv.utils.windowResize(chart.update);
-
-	  // chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
-
-	  return chart;
-	});
-
-	nv.addGraph(function() {
-	  var chart = nv.models.stackedAreaChart()
-					.x(function(d) { return d[0] })
-					.y(function(d) { return d[1] })
-					.color(keyColor)
-					;
-					//.clipEdge(true);
-
-	  chart.xAxis
-		  .tickFormat(function(d) { return d3.time.format('%x')(new Date(d)) });
-
-	  chart.yAxis
-		  .tickFormat(d3.format(',.2f'));
-
-	  nv.utils.windowResize(chart.update);
-
-	  return chart;
-	});
-}
-
-d3.select('body').insert('script').attr('src','http://dominikcyg.pythonanywhere.com/skirts/?callback=renderDiagram');
-
-
-}
-
-
-</script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8" defer></script>
+<script src="./nv.d3.min.js" defer></script>
+<script src="./src/utils.js" defer></script>
+<script src="./src/models/axis.js" defer></script>
+<script src="./src/tooltip.js" defer></script>
+<script src="./src/models/legend.js" defer></script>
+<script src="./src/models/axis.js" defer></script>
+<script src="./src/models/scatter.js" defer></script>
+<script src="./src/models/stackedArea.js" defer></script>
+<script src="./src/models/stackedAreaChart.js" defer></script>
+<script src="./main.js" defer></script>
 </body>
 </html>
