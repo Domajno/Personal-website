@@ -1,9 +1,0 @@
-﻿d3.selectAll(".node")
-    .data(nodes).transition().ease('in-out').delay(100).duration(1000).attr('cx', function(d){return radius(d.y);})
-	
-	
-d3.selectAll(".link")
-    .data(links).transition().ease('in-out').delay(100).duration(100)
-    .attr("d", d3.hive.link()
-    .angle(function(d) { return d?angle(d.x):0; })
-    .radius(function(d) { return d?radius(d.y):0; }))

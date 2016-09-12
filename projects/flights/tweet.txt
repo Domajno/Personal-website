@@ -1,2 +1,0 @@
-﻿My submission to #ShowMeYourGraph @GraphConnect 
-World airports and flights visualization using Hive plot layout.
