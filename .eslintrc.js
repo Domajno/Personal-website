@@ -11,7 +11,8 @@ module.exports = {
 
   "globals": {
     "d3": true,
-    "nv": true
+    "nv": true,
+    "circularHeatChart": true
   },
 
   "rules": {
