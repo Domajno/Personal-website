@@ -5,7 +5,7 @@
   <meta name="description" content="This application monitors Twitter for all the messages containing the word skirt to analyze the trends.">
   <meta name="keywords" content="data visualization,nvd3,fashion trends,visual analytics,interactive,social media monitoring,streamgraph,python">
   <meta name="author" content="Dominik Cygalski">
-  <link href="./nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="nv.d3.min.css" rel="stylesheet" type="text/css">
   <title>Fashion trends</title>
   <style>
 
@@ -94,14 +94,15 @@
     <h2>Social media monitoring - Skirts</h2>
   </div>
   <div style="float:left; padding: 10px;" id="description">
-    This application monitors Twitter for all the messages containing the word <b>skirt</b> and collects the adjective standing directly before it. All the results are aggregated daily and stored in the database. In the graph below the top ten most frequent adjectives are presented. On September 1st school starts, but what happened on July 3rd? The visualization is interactive - give it a try and play with the data. <a href="#" id="read-more">Read more</a>
+    This application monitors Twitter for all the messages containing the word <b>skirt</b> and collects the adjective standing directly before it. All the results are aggregated daily and stored in the database. In the graph below the top ten most frequent adjectives are presented. The visualization is interactive - give it a try and play with the data. On September 1st school starts, but what happened on July 3rd? <a href="#" id="read-more">Read more</a>
   </div>
   </div>
 
   <div id="info">
   <div>
-    <h2>Why skirts?</h2> It is just an example. Fashion seems to be a natural use case for such analysis. As for the language complexity skirts are less challenging than for example dresses as the word <i>dress</i> can be used both as a noun or a verb. Similarly, analyzing shirts or other parts of the wardrobe would require additional separation techniques to differentiate between male and female clothing and therefore skirts seems to be a neat example. Technically, following other products e.g. beer requires more computational power due to the large number of tweets about it.
+    <h2>Why skirts?</h2> Fashion seems to be a natural use case for such analysis. As for the language complexity skirts are less challenging than for example dresses as the word <i>dress</i> can be used both as a noun or a verb. Similarly, analyzing shirts or other parts of the wardrobe would require additional separation techniques to differentiate between male and female clothing and therefore skirts seems to be a neat example. Technically, following other products e.g. beer requires more computational power due to the large number of tweets about it.
     <h2>How?</h2> The Fashion Trends application uses many technologies. Core functionality is written in Python with the use of <a href="https://dev.twitter.com/docs/streaming-apis/" target="_blank">Twitter Streaming API</a> and <a href="https://github.com/ryanmcgrath/twython/" target="_blank">Twython</a> module to collect the tweets. Data is written into <a href="http://www.mysql.com/" target="_blank">MySQL</a> database each time a relevant tweet appears. Once a day the data is pulled from MySQL and pushed into <a href="http://mongodb.org/" target="_blank">MongoDB</a> hosted on <a href="https://mongolab.com/" target="_blank">mongolab.com</a>. API to query the aggregated data in MongoDB is also written in Python using the <a href="http://bottlepy.org/" target="_blank">Bottle framework</a>. All is hosted on <a href="http://pythonanywhere.com" target="_blank">pythonanywhere.com</a>. Frontend interface uses <a href="http://nvd3.org/" target="_blank">NVD3 re-usable charts</a> library written in JavaScript which builds on top of <a href="d3js.org" target="_blank">D3.js</a> to provide the interactive visualization.
+    Contact me if you are interested in the full dataset.
     <p>See more at <a href="http://cygalski.pl/">cygalski.pl</a></p>
   </div>
   </div>
@@ -113,16 +114,8 @@
 <script src="https://google.github.io/traceur-compiler/bin/traceur.js" defer></script>
 <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js" defer></script>
 <script src="https://google.github.io/traceur-compiler/src/bootstrap.js" defer></script>
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8" defer></script>
-<script src="./nv.d3.min.js" defer></script>
-<script src="./src/utils.js" defer></script>
-<script src="./src/models/axis.js" defer></script>
-<script src="./src/tooltip.js" defer></script>
-<script src="./src/models/legend.js" defer></script>
-<script src="./src/models/axis.js" defer></script>
-<script src="./src/models/scatter.js" defer></script>
-<script src="./src/models/stackedArea.js" defer></script>
-<script src="./src/models/stackedAreaChart.js" defer></script>
-<script src="./main.js" type="module" defer></script>
+<script src="js/d3.v3.min.js" charset="utf-8" defer></script>
+<script src="js/nv.d3.min.js" defer></script>
+<script src="js/main.js" type="module" defer></script>
 </body>
 </html>
