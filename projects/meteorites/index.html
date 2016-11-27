@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Meteorite Landings</title>
+    <script src="d3.v3.min.js" defer></script>
+    <script src="topojson.v1.min.js" defer></script>
+    <script src="world.js" defer></script>
+    <script src="nasa.js" defer></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="title">
+      <svg width="16px" height="16px" id="play" class="play">
+        <path class="pause" d="M1,0 L7,0 7,16 1,16 M10,0 L16,0 16,16 10,16" />
+        <path class="play" d="M1,0 L8,3.74 8,12.28 1,16 M8,3.74 L16,8 16,8 8,12.28" />
+      </svg>
+      <h1><a href="https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh" target="_blank">meteorite landings</a></h1>
+    </div>
+    <svg id="globe">
+      <defs>
+        <filter id="glow">
+          <feColorMatrix type="matrix" values="0 0 0 0   0
+            0 0 0 0.1 0
+            0 0 0 0.1 0
+            0 0 0 1   0"></feColorMatrix>
+          <feGaussianBlur stdDeviation="3.5" result="coloredBlur"></feGaussianBlur>
+          <feMerge>
+            <feMergeNode in="coloredBlur"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+    <svg id="timeline"></svg>
+    <div class="infobox">
+      <div><span class="class"></span><span>:</span><span>class</span></div>
+      <div><span class="year"></span><span>:</span><span>year</span></div>
+      <div><span class="name"></span><span>:</span><span>name</span></div>
+      <div><span class="mass"></span><span>:</span><span>mass(g)</span></div>
+    </div>
+  </body>
+</html>

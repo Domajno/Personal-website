@@ -1,0 +1,118 @@
+body {
+  background-color: #141414;
+  font-family: Lato, sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 1px;
+  margin: 0;
+  overflow: hidden;
+}
+.title {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 14px 0px 0px 0px;
+  padding-right: 22px;
+  text-transform: uppercase;
+}
+h1 {
+  display: inline;
+  font-size: 22px;
+  font-weight: 400;
+  padding-left: 6px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+#globe {
+  padding-left: 22px;
+  width: 70vw;
+  height: 125vh;
+}
+.infobox {
+  position: absolute;
+  bottom: 22px;
+  right: 22px;
+  text-align: right;
+}
+.infobox div span:nth-child(3) {
+  min-width: 70px;
+  float: right;
+}
+.water {
+  fill: #141414;
+}
+.land {
+  fill: #383838;
+  stroke: #484848;
+  stroke-width: 0.5px;
+}
+.met {
+  fill: #b98406;
+  opacity: 0.85;
+  transition: opacity 500ms ease-in;
+}
+.met.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.met:hover {
+  animation: pulse 800ms infinite;
+}
+@keyframes pulse {
+  0% {
+    fill: #b98406;
+  }
+  50% {
+    fill: rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    fill: #b98406;
+  }
+}
+#timeline {
+  position: absolute;
+  top: 100px;
+  right: 22px;
+  font-weight: 100;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+.axis {
+  shape-rendering: crispEdges;
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.8);
+  stroke-width: 0.5px;
+  pointer-events: none;
+}
+#timeline text {
+  stroke: none;
+  fill: rgba(255, 255, 255, 0.8);
+}
+.tick line {
+  display: none;
+}
+.brush {
+  fill: #383838;
+  stroke: #484848;
+  stroke-width: 0.5px;
+}
+#play {
+  fill: #383838;
+}
+#play path {
+  transition: opacity 300ms ease-in;
+  cursor: pointer;
+}
+#play.play path.play {
+  opacity: 0;
+}
+#play.play path.pause {
+  opacity: 1;
+}
+#play path.play {
+  opacity: 1;
+}
+#play path.pause {
+  opacity: 0;
+}
