@@ -3,11 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Meteorite Landings</title>
-    <script src="d3.v3.min.js" defer></script>
-    <script src="topojson.v1.min.js" defer></script>
-    <script src="world.js" defer></script>
-    <script src="nasa.js" defer></script>
-    <script src="main.js" defer></script>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -17,6 +12,7 @@
         <path class="play" d="M1,0 L8,3.74 8,12.28 1,16 M8,3.74 L16,8 16,8 8,12.28" />
       </svg>
       <h1><a href="https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh" target="_blank">meteorite landings</a></h1>
+      <h2><a href="http://cygalski.pl/">made by cygalski.pl</a></h2>
     </div>
     <svg id="globe">
       <defs>
@@ -40,5 +36,14 @@
       <div><span class="name"></span><span>:</span><span>name</span></div>
       <div><span class="mass"></span><span>:</span><span>mass(g)</span></div>
     </div>
+
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js" defer></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js" defer></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js" defer></script>
+    <script src="d3.v3.min.js" defer></script>
+    <script src="topojson.v1.min.js" defer></script>
+    <script src="world.js" defer></script>
+    <script src="nasa.js" defer></script>
+    <script src="main.js" type="module" defer></script>
   </body>
 </html>
