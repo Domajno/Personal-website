@@ -90,7 +90,7 @@
           .style('fill', '#aaa');
       });
   }
-  d3.json('/projects/dailydeals/data/circ.json', (circData) => {
+  d3.json('projects/dailydeals/data/circ.json', (circData) => {
     circ('avg_price', circData);
     function c(type) {
       const color = d3.scale
@@ -262,7 +262,7 @@
       .style('stroke-width', '1')
       .style('stroke', '#aaa');
   }
-  d3.json('/projects/dailydeals/data/pareto.json', (paretoData) => {
+  d3.json('projects/dailydeals/data/pareto.json', (paretoData) => {
     paretoGraph('revenue', paretoData);
 
     // Radio button interactions
@@ -332,5 +332,5 @@
       .attr('y', d => d.y)
       .text(d => d.label);
   }
-  d3.json('/projects/dailydeals/data/steamgraph.json', steamgraph);
+  d3.json('projects/dailydeals/data/steamgraph.json', steamgraph);
 }(d3));

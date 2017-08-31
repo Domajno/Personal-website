@@ -55,5 +55,5 @@
 
   // Get data and render diagram
   // This used to be a call to pythonanywhere hosted backend but no need for that anymore
-  d3.json('/projects/fashion/data/data.json', renderDiagram);
+  d3.json('projects/fashion/data/data.json', renderDiagram);
 }(d3, nv));
